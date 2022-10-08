@@ -2,13 +2,12 @@ import { Row, Col, Card, Container } from "react-bootstrap";
 import Image from "next/image";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
-import Footer from "../Footer";
 
 const Main = () => {
   return (
     <section className={classes.main + " text-center px-5"}>
       <Container>
-        <div className={classes.textWrapper + " mb-4"}>
+        <div className={classes.textWrapper + " mb-5"}>
           <h2 className="mb-4 h3">AFRICA INTEGRATION PARTNER</h2>
           <p>
             Africa Integration Partner est un cabinet spécialisé dans

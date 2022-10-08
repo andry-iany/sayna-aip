@@ -6,6 +6,11 @@
   cursor: pointer;
 }
 
+.socials > *:hover {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(69%) saturate(929%)
+    hue-rotate(320deg) brightness(104%) contrast(101%);
+}
+
 .link {
   position: relative;
   width: max-content;

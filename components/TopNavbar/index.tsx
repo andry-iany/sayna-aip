@@ -4,11 +4,11 @@ import classes from "./style.module.css";
 import Logo from "../Logo";
 
 const links = [
-  { text: "à propos", href: "/" },
-  { text: "solutions", href: "/" },
-  { text: "nos programmes", href: "/" },
-  { text: "stories", href: "/" },
-  { text: "contact", href: "/" },
+  { text: "à propos", href: "/about" },
+  { text: "solutions", href: "/solutions" },
+  { text: "nos programmes", href: "/programs" },
+  { text: "stories", href: "/stories" },
+  { text: "contact", href: "/contact" },
 ];
 
 const TopNavbar = () => {

@@ -61,7 +61,7 @@ const Footer = () => {
       <Container>
         <div className="d-flex justify-content-between flex-column flex-md-row">
           <div>
-            <h5>Liens utiles</h5>
+            <h5 className="mb-4">Liens utiles</h5>
             <Row xs={2}>{renderLinks}</Row>
           </div>
           <div className="pt-4 px-4">
