@@ -1,4 +1,3 @@
-import TopNavbar from "../TopNavbar";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
 import Mark from "../ui/Mark";

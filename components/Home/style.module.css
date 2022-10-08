@@ -1,3 +1,19 @@
+.header {
+  background-image: url(/images/hero.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  z-index: -1;
+}
+
 .pageTitle {
   width: 70%;
   margin: 0 auto;

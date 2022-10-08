@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="1440"
+   height="560"
+   preserveAspectRatio="none"
+   viewBox="0 0 1440 560"
+   id="svg19"
+   sodipodi:docname="hero.svg"
+   inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview21"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.4790474"
+     inkscape:cx="922.21522"
+     inkscape:cy="467.53066"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g12" />
+  <g
+     mask="url(&quot;#SvgjsMask1187&quot;)"
+     fill="none"
+     id="g12">
+    <path
+       d="M1261.74 207.61 a139.54 139.54 0 1 0 279.08 0 a139.54 139.54 0 1 0 -279.08 0z"
+       fill="rgba(255, 154, 77, 0.4)"
+       class="triangle-float3"
+       id="path2"
+       style="fill:#ffbd4d;fill-opacity:0.31597564" />
+    <path
+       d="M1208.725623063446 125.60562883157364L1210.876384058727 2.388613934993657 1087.659369162147 0.23785293971273802 1085.508608166866 123.45486783629272z"
+       fill="rgba(255, 154, 77, 0.4)"
+       class="triangle-float3"
+       id="path4"
+       style="fill:#ffbd4d;fill-opacity:0.222303" />
+    <path
+       d="m 1139.1387,546.11372 c 36.52,0.733 51.2827,15.56615 69.0757,-16.33485 17.356,-31.117 15.5986,-29.77687 -2.1844,-60.65187 -17.817,-30.935 -48.838,-54.158 -84.526,-53.292 -34.468,0.837 -61.1,27.014 -77.705,57.23 -15.901,28.936 -15.1643,45.65916 3.1316,68.35336 58.0945,16.87836 49.9819,-3.97386 92.2081,4.69536"
+       fill="rgba(255, 154, 77, 0.4)"
+       class="triangle-float3"
+       id="path6"
+       style="fill:#ffbd4d;fill-opacity:0.139054"
+       sodipodi:nodetypes="csccccc" />
+    <path
+       d="M167.43361911969794 409.0316849188541L19.350778127373815 339.9795221227845-49.70138466869582 488.0623631151086 98.38145632362829 557.1145259111782z"
+       fill="rgba(255, 154, 77, 0.4)"
+       class="triangle-float3"
+       id="path8"
+       style="fill:#ffbd4d;fill-opacity:0.20658654" />
+    <path
+       d="M753.449,139.684C775.707,138.036,788.999,117.444,800.007,98.029C810.803,78.988,821.153,57.3,811.217,37.796C800.573,16.901,776.898,6.887,753.449,6.634C729.511,6.376,705.898,16.059,693.479,36.525C680.613,57.727,680.724,84.5,693.188,105.94C705.589,127.272,728.841,141.506,753.449,139.684"
+       fill="rgba(255, 154, 77, 0.4)"
+       class="triangle-float3"
+       id="path10"
+       style="fill:#ffbd4d;fill-opacity:0.25999999" />
+  </g>
+  <defs
+     id="defs17">
+    <mask
+       id="SvgjsMask1187">
+      <rect
+         width="1440"
+         height="560"
+         fill="#ffffff"
+         id="rect14" />
+    </mask>
+  </defs>
+</svg>

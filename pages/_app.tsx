@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SSRProvider>
       <Layout>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </Layout>
     </SSRProvider>
   );
