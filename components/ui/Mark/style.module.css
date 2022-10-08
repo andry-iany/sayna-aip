@@ -1,0 +1,13 @@
+.markPrimary {
+  position: relative;
+}
+.markPrimary::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background-color: #f2b142;
+  z-index: -1;
+}

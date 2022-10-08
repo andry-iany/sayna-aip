@@ -1,0 +1,9 @@
+.cBtn {
+  background-color: #e4a435 !important;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cBtn:hover {
+  background-color: #cd9027 !important;
+}

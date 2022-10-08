@@ -1,0 +1,8 @@
+.pageTitle {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.pageTitle h1 {
+  max-width: 945px;
+}
