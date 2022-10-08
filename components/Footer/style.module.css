@@ -26,3 +26,12 @@
 .link:hover:after {
   width: 100%;
 }
+
+.address {
+  color: #cecdcd;
+}
+
+.legal {
+  color: #cecdcd;
+  font-size: 0.85em;
+}

@@ -58,12 +58,31 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer + " py-5 text-white"}>
-      <Container className="d-flex justify-content-between flex-column flex-md-row">
-        <div>
-          <h5>Liens utiles</h5>
-          <Row xs={2}>{renderLinks}</Row>
+      <Container>
+        <div className="d-flex justify-content-between flex-column flex-md-row">
+          <div>
+            <h5>Liens utiles</h5>
+            <Row xs={2}>{renderLinks}</Row>
+          </div>
+          <div className="pt-4 px-4">
+            <div className={classes.address + " text-center mb-3"}>
+              Lorem ipsum dolor sit amet.
+              <br />
+              Lorem ipsum dolor .
+            </div>
+            <div className={classes.socials + " d-flex justify-content-center"}>
+              {renderSocials}
+            </div>
+          </div>
         </div>
-        <div className={classes.socials + " py-4 d-flex"}>{renderSocials}</div>
+        <div className={classes.legal + " text-center pt-5"}>
+          <span>
+            &copy; Copyright {new Date().getFullYear()} Africa Integration
+            Partner
+          </span>
+          {" | "}
+          <Link className="text-decoration-underline">Mentions légales</Link>
+        </div>
       </Container>
     </footer>
   );
