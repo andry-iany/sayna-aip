@@ -6,3 +6,41 @@
 .pageTitle h1 {
   max-width: 945px;
 }
+
+.textWrapper {
+  color: rebeccapurples;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.main h2 {
+  width: max-content;
+  position: relative;
+  margin: 0 auto;
+}
+.main h2::after {
+  content: "";
+  width: 40%;
+  height: 3px;
+  background-color: #f2b142;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
+.iconWrapper {
+  padding: 8px;
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  padding: 10px;
+
+  border-radius: 50%;
+  border: 2px solid #f2b142;
+}
+.cardTitle {
+  margin-top: 1rem;
+}
+.map {
+  height: 400px;
+  background-color: #454555;
+}
