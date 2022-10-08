@@ -8,7 +8,6 @@ const Header = () => {
     <header
       className={classes.header + " min-vh-100 d-flex align-items-center "}
     >
-      <TopNavbar />
       <section className={classes.pageTitle + " c-text-secondary"}>
         <h2 className="h5 mb-4 fw-normal">
           Vous avez une idée ? Un projet ?

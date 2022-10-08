@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 
 import { useEffect } from "react";
 import { SSRProvider } from "react-bootstrap";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SSRProvider>
-      <Component {...pageProps} />;
+      <Layout>
+        <Component {...pageProps} />;
+      </Layout>
     </SSRProvider>
   );
 }
