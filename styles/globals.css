@@ -6,7 +6,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
+a,
+a:focus,
+a:visited {
   color: inherit;
   text-decoration: none;
 }
@@ -15,12 +17,12 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  --primary-accentuate: #c3610f;
+  --secondary-accentuate: #ffbd4d;
+  --primary-dark: #063fce;
+  --secondary-dark: #454555;
+  --light: #a6a6a6;
+  --lighter: #c5bcff;
+  --white: #fff;
 }

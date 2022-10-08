@@ -1,0 +1,20 @@
+.link {
+  position: relative;
+  width: max-content;
+  text-transform: capitalize;
+}
+
+.link::after {
+  content: "";
+  background-color: var(--primary-accentuate);
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  transition: width ease 0.4s;
+}
+
+.link:hover:after {
+  width: 100%;
+}
