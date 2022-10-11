@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Fragment } from "react";
 import { Col, Container, Row, Card } from "react-bootstrap";
+import PageSectionTitle from "../ui/PageSectionTitle";
 import classes from "./style.module.css";
 
 const aboutTexts = [
@@ -114,15 +115,13 @@ const About = () => {
 
   return (
     <Container className={classes.container}>
-      <section className={classes.textWrapper + " mb-5 pb-4 text-center"}>
-        <h2 className="mb-4 h3">AFRICA INTEGRATION PARTNER</h2>
-        <p>
-          Africa Integration Partner est un cabinet global spécialisé dans
+      <PageSectionTitle
+        title="AFRICA INTEGRATION PARTNER"
+        subtitle=" Africa Integration Partner est un cabinet global spécialisé dans
           l'accompagnement des politiques africaines sur les thématiques
           d'accompagnement des PME, de la transformation du secteur informel et
-          d'insertion des jeunes.
-        </p>
-      </section>
+          d'insertion des jeunes."
+      />
 
       {renderAboutText}
 

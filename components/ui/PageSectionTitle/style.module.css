@@ -1,0 +1,20 @@
+.textWrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.textWrapper h2 {
+  width: max-content;
+  position: relative;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.textWrapper h2::after {
+  content: "";
+  width: 40%;
+  height: 3px;
+  background-color: #f2b142;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
