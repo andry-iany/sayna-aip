@@ -1,0 +1,10 @@
+.container {
+  padding-top: 30vh;
+}
+
+.cardTitle {
+  font-family: "Brygada", serif;
+  font-style: italic;
+  color: #f2b142;
+  font-weight: 700;
+}
