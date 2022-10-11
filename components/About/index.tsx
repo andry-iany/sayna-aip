@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Card } from "react-bootstrap";
 import classes from "./style.module.css";
 
 const aboutTexts = [
@@ -35,6 +35,24 @@ const ideals = [
   },
 ];
 
+const teams = [
+  {
+    name: "Freddy KOUDAHOUA",
+    bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles.",
+    image: "/images/team.jpg",
+  },
+  {
+    name: "Freddy KOUDAHOUA 2",
+    bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles…..",
+    image: "/images/team.jpg",
+  },
+  {
+    name: "Freddy KOUDAHOUA 3",
+    bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles…..",
+    image: "/images/team.jpg",
+  },
+];
+
 const About = () => {
   const renderAboutText = aboutTexts.map((txt, idx) => (
     <section
@@ -65,6 +83,34 @@ const About = () => {
     </Col>
   ));
 
+  const renderTeams = teams.map((team) => (
+    <Col className="mb-4" key={team.name}>
+      <Card
+        className={`${classes.teamCard} rounded-0 border-0 bg-dark text-white`}
+        style={{ height: "400px" }}
+      >
+        <Card.Img
+          src={team.image}
+          alt={`Image of ${team.name}`}
+          style={{ width: "100%", height: "100%" }}
+          className="rounded-0"
+        />
+        <Card.ImgOverlay className={classes.teamOverlay + " py-4 rounded-0"}>
+          <Card.Title className={classes.teamName + " mb-3"}>
+            {team.name}
+          </Card.Title>
+          <Card.Text>
+            {team.bio.split("\n").map((para, idx) => (
+              <>
+                {para} <br /> <br />
+              </>
+            ))}
+          </Card.Text>
+        </Card.ImgOverlay>
+      </Card>
+    </Col>
+  ));
+
   return (
     <Container className={classes.container}>
       <section className={classes.textWrapper + " mb-5 pb-4 text-center"}>
@@ -76,9 +122,23 @@ const About = () => {
           d'insertion des jeunes.
         </p>
       </section>
+
       {renderAboutText}
-      <Row xs={1} md={3} className="bg-secondary py-5">
+
+      <Row xs={1} md={3} className={`${classes.ideals} py-5 mb-5`}>
         {renderIdeals}
+      </Row>
+
+      <section className={classes.textWrapper + " mb-5 py-4 text-center"}>
+        <h2 className="mb-4 h3">L'equipe</h2>
+        <p>
+          Une équipe jeune, avec une bonne compréhension de vos enjeux, engagée
+          et expérimentée vous accompagne !
+        </p>
+      </section>
+
+      <Row xs={1} md={2} lg={3} className={classes.team + " mb-5"}>
+        {renderTeams}
       </Row>
     </Container>
   );

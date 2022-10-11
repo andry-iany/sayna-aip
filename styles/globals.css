@@ -5,6 +5,10 @@
   src: url(/fonts/Brygada-Italic.ttf) format("truetype");
   font-style: italic;
 }
+@font-face {
+  font-family: "Brygada";
+  src: url(/fonts/Brygada.ttf) format("truetype");
+}
 
 html,
 body {

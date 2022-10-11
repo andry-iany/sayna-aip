@@ -10,6 +10,7 @@
   width: max-content;
   position: relative;
   margin: 0 auto;
+  text-transform: uppercase;
 }
 .textWrapper h2::after {
   content: "";
@@ -38,5 +39,35 @@
   max-width: 400px;
 }
 
-.idealWrapper h3 {
+.ideals {
+  background-color: #504538;
+  box-shadow: 0 0 0 100vmax #504538;
+  clip-path: inset(0 -100vmax);
+}
+.teamCard {
+  cursor: pointer;
+  overflow: hidden;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.teamCard img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.teamCard:hover .teamOverlay {
+  height: 100%;
+  opacity: 1;
+}
+.teamOverlay {
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  background-color: #504538;
+  max-height: 100%;
+}
+.teamName {
+  font-family: "Brygada", serif;
+  font-style: italic;
+  font-weight: 600;
 }
