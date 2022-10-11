@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Fragment } from "react";
 import { Col, Container, Row, Card } from "react-bootstrap";
 import classes from "./style.module.css";
 
@@ -89,21 +90,28 @@ const About = () => {
         className={`${classes.teamCard} rounded-0 border-0 bg-dark text-white`}
         style={{ height: "400px" }}
       >
-        <Card.Img
+        <Image
+          src={team.image}
+          alt={`Image of ${team.name}`}
+          // style={{ width: "100%", height: "100%" }}
+          layout="fill"
+          className="card-img rounded-0"
+        />
+        {/* <Card.Img
           src={team.image}
           alt={`Image of ${team.name}`}
           style={{ width: "100%", height: "100%" }}
           className="rounded-0"
-        />
+        /> */}
         <Card.ImgOverlay className={classes.teamOverlay + " py-4 rounded-0"}>
           <Card.Title className={classes.teamName + " mb-3"}>
             {team.name}
           </Card.Title>
           <Card.Text>
             {team.bio.split("\n").map((para, idx) => (
-              <>
+              <Fragment key={idx}>
                 {para} <br /> <br />
-              </>
+              </Fragment>
             ))}
           </Card.Text>
         </Card.ImgOverlay>
