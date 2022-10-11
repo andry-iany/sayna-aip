@@ -1,0 +1,12 @@
+.container {
+  padding-top: 30vh;
+}
+
+.img {
+  min-width: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  position: relative;
+  display: block;
+}
