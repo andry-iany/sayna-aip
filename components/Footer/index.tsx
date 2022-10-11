@@ -66,9 +66,8 @@ const Footer = () => {
           </div>
           <div className="pt-4 px-4">
             <div className={classes.address + " text-center mb-3"}>
-              Lorem ipsum dolor sit amet.
-              <br />
-              Lorem ipsum dolor .
+              Nukafu, Rue en face de la Direction Générale de la SOTRAL,
+              Immeuble MENSANH, Togo
             </div>
             <div className={classes.socials + " d-flex justify-content-center"}>
               {renderSocials}
