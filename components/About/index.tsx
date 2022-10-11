@@ -125,19 +125,17 @@ const About = () => {
 
       {renderAboutText}
 
-      <Row xs={1} md={3} className={`${classes.ideals} py-5 mb-5`}>
+      <Row xs={1} md={3} className={`${classes.ideals} py-5`}>
         {renderIdeals}
       </Row>
 
-      <section className={classes.textWrapper + " mb-5 py-4 text-center"}>
-        <h2 className="mb-4 h3">L'equipe</h2>
-        <p>
-          Une équipe jeune, avec une bonne compréhension de vos enjeux, engagée
-          et expérimentée vous accompagne !
-        </p>
-      </section>
+      <PageSectionTitle
+        title="L'equipe"
+        subtitle="Une équipe jeune, avec une bonne compréhension de vos enjeux, engagée
+          et expérimentée vous accompagne !"
+      />
 
-      <Row xs={1} md={2} lg={3} className={classes.team + " mb-5"}>
+      <Row xs={1} md={2} lg={3} className={classes.team}>
         {renderTeams}
       </Row>
     </Container>

@@ -2,6 +2,27 @@
   padding-top: 30vh;
 }
 
+.textWrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.textWrapper h2 {
+  width: max-content;
+  position: relative;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.textWrapper h2::after {
+  content: "";
+  width: 40%;
+  height: 3px;
+  background-color: #f2b142;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
+
 .offerWrapper {
   max-width: 900px;
   margin: 0 auto;
@@ -14,6 +35,15 @@
   font-weight: 550;
 }
 
+.offerWrapper h3::before {
+  content: "“";
+  margin-right: 0.3em;
+}
+.offerWrapper h3::after {
+  content: "”";
+  margin-left: 0.3em;
+}
+
 .offerWrapper p {
   max-width: 400px;
 }
@@ -22,6 +52,11 @@
   background-color: #504538;
   box-shadow: 0 0 0 100vmax #504538;
   clip-path: inset(0 -100vmax);
+  margin-bottom: 6rem;
+}
+
+.team {
+  margin-bottom: 5rem;
 }
 .teamCard {
   cursor: pointer;
