@@ -2,9 +2,11 @@ import { Row, Col, Card, Container } from "react-bootstrap";
 import Image from "next/image";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
-import Map from "./Map";
+import dynamic from "next/dynamic";
 
 const Main = () => {
+  const Map = dynamic(() => import("./Map"), { ssr: false });
+
   return (
     <section className={classes.main + " text-center px-5"}>
       <Container>
@@ -77,8 +79,6 @@ const Main = () => {
             </Card>
           </Col>
         </Row>
-
-        <div className={classes.map + " mb-5"}></div>
 
         <Map />
       </Container>
