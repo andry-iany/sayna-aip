@@ -1,0 +1,10 @@
+.container {
+  padding-top: 30vh;
+  min-height: 100vh;
+}
+
+.notReady {
+  font-family: "Brygada", serif;
+  font-style: italic;
+  font-weight: 550;
+}
