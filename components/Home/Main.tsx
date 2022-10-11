@@ -2,6 +2,7 @@ import { Row, Col, Card, Container } from "react-bootstrap";
 import Image from "next/image";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
+import Map from "./Map";
 
 const Main = () => {
   return (
@@ -78,6 +79,8 @@ const Main = () => {
         </Row>
 
         <div className={classes.map + " mb-5"}></div>
+
+        <Map />
       </Container>
     </section>
   );

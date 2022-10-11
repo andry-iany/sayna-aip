@@ -2,6 +2,7 @@ import Link from "../ui/Link";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import classes from "./style.module.css";
 import Logo from "../Logo";
+import { useRouter } from "next/router";
 
 const links = [
   { text: "à propos", href: "/about" },
@@ -12,8 +13,16 @@ const links = [
 ];
 
 const TopNavbar = () => {
+  const router = useRouter();
+
   const renderLinks = links.map((link) => (
-    <Link className={classes.link} key={link.text} href={link.href}>
+    <Link
+      className={`${classes.link} 
+      ${router.pathname === link.href ? classes.linkActive : ""}
+    `}
+      key={link.text}
+      href={link.href}
+    >
       {link.text}
     </Link>
   ));
@@ -21,9 +30,9 @@ const TopNavbar = () => {
   return (
     <Navbar bg="white" expand="lg" className="p-0 fixed-top w-100 shadow">
       <Container className="py-4">
-        <Navbar.Brand href="#" className="p-0">
-          <Logo />
-        </Navbar.Brand>
+        <Link href="/" className={classes.logo + " navbar-brand p-0"}>
+          AIP
+        </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="align-items-center py-4 py-lg-0">
           <Nav className="ms-auto gap-4">{renderLinks}</Nav>

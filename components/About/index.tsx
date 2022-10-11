@@ -45,12 +45,12 @@ const teams = [
   {
     name: "Freddy KOUDAHOUA 2",
     bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles…..",
-    image: "/images/team.jpg",
+    image: "/images/team_2.jpg",
   },
   {
     name: "Freddy KOUDAHOUA 3",
     bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles…..",
-    image: "/images/team.jpg",
+    image: "/images/team_3.jpg",
   },
 ];
 
@@ -93,16 +93,9 @@ const About = () => {
         <Image
           src={team.image}
           alt={`Image of ${team.name}`}
-          // style={{ width: "100%", height: "100%" }}
           layout="fill"
           className="card-img rounded-0"
         />
-        {/* <Card.Img
-          src={team.image}
-          alt={`Image of ${team.name}`}
-          style={{ width: "100%", height: "100%" }}
-          className="rounded-0"
-        /> */}
         <Card.ImgOverlay className={classes.teamOverlay + " py-4 rounded-0"}>
           <Card.Title className={classes.teamName + " mb-3"}>
             {team.name}
