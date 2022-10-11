@@ -7,6 +7,12 @@ import { useEffect } from "react";
 import { SSRProvider } from "react-bootstrap";
 import Layout from "../components/Layout";
 
+// progress
+import "../setup/progress/style.css";
+import { setupNavProgress } from "../setup/progress";
+
+setupNavProgress();
+
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // @ts-ignore
