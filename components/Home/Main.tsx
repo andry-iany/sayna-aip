@@ -4,9 +4,9 @@ import classes from "./style.module.css";
 import Button from "../ui/Button";
 import dynamic from "next/dynamic";
 
-const Main = () => {
-  const Map = dynamic(() => import("./Map"), { ssr: false });
+const Map = dynamic(() => import("./Map"), { ssr: false });
 
+const Main = () => {
   return (
     <section className={classes.main + " text-center px-5"}>
       <Container>
@@ -85,7 +85,9 @@ const Main = () => {
           </Button>
         </div>
 
-        <Map />
+        <div className={classes.map}>
+          <Map />
+        </div>
 
         <div className="mx-auto mb-5 pt-3 pb-5">
           <Button img="/images/arrow-right.svg" href="/contact">

@@ -123,11 +123,11 @@ const About = () => {
           d'insertion des jeunes."
       />
 
-      {renderAboutText}
-
       <Row xs={1} md={3} className={`${classes.ideals} py-5`}>
         {renderIdeals}
       </Row>
+
+      {renderAboutText}
 
       <PageSectionTitle
         title="L'equipe"
