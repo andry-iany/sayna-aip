@@ -1,5 +1,6 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import L from "leaflet";
+import classes from "./style.module.css";
 
 const icon = new L.Icon({
   iconUrl: "/images/marker.svg",
@@ -41,12 +42,12 @@ const Map = () => {
   ));
 
   return (
-    <section className="mb-4">
+    <section className={classes.map + " mb-4"}>
       <MapContainer
         center={[9.200382343837804, 2.271176556264672]}
         zoom={5}
         scrollWheelZoom={true}
-        style={{ width: "100%", height: "400px" }}
+        style={{ width: "100%", height: "100%" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

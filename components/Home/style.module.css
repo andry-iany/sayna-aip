@@ -62,6 +62,7 @@
   font-weight: 550;
 }
 .map {
+  min-height: 400px;
   height: 400px;
-  background-color: #454555;
+  background-color: #2f4858;
 }
