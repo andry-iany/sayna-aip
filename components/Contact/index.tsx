@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 import PageSectionTitle from "../ui/PageSectionTitle";
+import ContactForm from "./ContactForm";
 import classes from "./style.module.css";
 
 const contacts = [
@@ -63,6 +64,7 @@ const Contact = () => {
       <Row xs={1} md={2} lg={3} className="mb-5">
         {renderContacts}
       </Row>
+      <ContactForm />
     </Container>
   );
 };

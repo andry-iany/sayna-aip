@@ -10,3 +10,20 @@
   position: relative;
   display: block;
 }
+
+.tabWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabWrapper li {
+  width: 50%;
+}
+
+.tabWrapper li button {
+  width: 100%;
+}
+
+.tabWrapper :is(input, button) {
+  border-radius: 0;
+}
