@@ -18,10 +18,9 @@ const Main = () => {
             allant de la conception du projet à la recherche de financement en
             passant par le renforcement des capacités du dirigeant
           </p>
-          <Button>Nous connaitre</Button>
         </div>
 
-        <Row xs="1" md="2" className="py-5  mb-5">
+        <Row xs="1" md="2" className="mt-5 mb-3">
           <Col className="pe-md-4 mb-5 mb-md-0">
             <Card className="h-100 text-center px-3 py-4">
               <div
@@ -80,7 +79,19 @@ const Main = () => {
           </Col>
         </Row>
 
+        <div className="mx-auto mb-5 py-5">
+          <Button img="/images/arrow-right.svg" href="/about">
+            Nous connaitre
+          </Button>
+        </div>
+
         <Map />
+
+        <div className="mx-auto mb-5 pt-3 pb-5">
+          <Button img="/images/arrow-right.svg" href="/contact">
+            Nous contacter
+          </Button>
+        </div>
       </Container>
     </section>
   );

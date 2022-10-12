@@ -41,7 +41,7 @@ const Map = () => {
   ));
 
   return (
-    <section className="mb-5 pb-5">
+    <section className="mb-4">
       <MapContainer
         center={[9.200382343837804, 2.271176556264672]}
         zoom={5}

@@ -7,3 +7,15 @@
 .cBtn:hover {
   background-color: #cd9027 !important;
 }
+
+.img {
+  transition: transform ease 0.3s;
+}
+
+.cBtn * {
+  overflow: visible !important;
+}
+
+.cBtn:hover .img {
+  transform: translate(30%);
+}

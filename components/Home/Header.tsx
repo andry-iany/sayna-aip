@@ -19,7 +19,7 @@ const Header = () => {
           votre <Mark>réussite</Mark>!
         </h1>
 
-        <Button>Découvrez nos services</Button>
+        <Button href="/solutions">Découvrez nos services</Button>
       </section>
     </header>
   );
