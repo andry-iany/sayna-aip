@@ -5,7 +5,7 @@ import classes from "./style.module.css";
 
 const solutions = [
   {
-    image: "/images/team.jpg",
+    image: "/images/study.svg",
     title: "Etudes, Conseil & Accompagnement",
     subtitle:
       " Nos thématiques de conseils couvrent tous les métiers pouvant ainsi aller de votre réflexion stratégique jusqu'au financement en passant par la sécurisation juridique et fiscal de votre business.",
@@ -19,7 +19,7 @@ const solutions = [
     ],
   },
   {
-    image: "/images/team.jpg",
+    image: "/images/training.svg",
     title: "Formation",
     subtitle:
       " Nos experts vous accompagnent dans la formation de vos équipes en fonction de vos problématiques et enjeux business. Parce que l'humain est la ressource la plus précieuse de nos industries, nous accordons une attention particulière à nos parcours de formation pour l'enrichir de savoirs pratiques. Orienté résultat et soucieux du bénéfice client, nous accordons du prix à nos parcours de formation. Ainsi,",
@@ -30,7 +30,7 @@ const solutions = [
     ],
   },
   {
-    image: "/images/team.jpg",
+    image: "/images/finance.svg",
     title: "Recherche de financement :",
     subtitle: "",
     options: [
@@ -81,20 +81,16 @@ const Solution = () => {
         ${classes.solution} 
         ${idx % 2 ? "flex-row" : "flex-row-reverse"}
         justify-content-center
+        gap-4
       `}
     >
       <Col
-        md={5}
+        md={4}
         className={
           classes.solutionImg + " d-none d-md-block position-relative px-5"
         }
       >
-        <Image
-          src={solution.image}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
-        />
+        <Image src={solution.image} layout="fill" />
       </Col>
       <Col md={7} className="px-5">
         <h3>{solution.title}</h3>
@@ -110,7 +106,7 @@ const Solution = () => {
 
   const renderSectors = sectors.map((sector) => (
     <Col key={sector.title} className="px-5 mb-5">
-      <Image src={sector.icon} width="50" height="50" />
+      <Image src={sector.icon} width="60" height="60" />
       <p className="pt-2 lead">{sector.title}</p>
     </Col>
   ));
