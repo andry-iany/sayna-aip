@@ -61,7 +61,7 @@ const Contact = () => {
   return (
     <Container className={classes.container}>
       <PageSectionTitle title="Nos Contacts" subtitle="" />
-      <Row xs={1} md={2} lg={3} className="mb-5">
+      <Row xs={1} md={2} className={classes.contactDetail + " mx-auto mb-5"}>
         {renderContacts}
       </Row>
       <ContactForm />

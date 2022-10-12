@@ -13,7 +13,7 @@
 
 .tabWrapper {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 8rem auto;
 }
 
 .tabWrapper li {
@@ -22,8 +22,24 @@
 
 .tabWrapper li button {
   width: 100%;
+  font-size: 1.2em;
+  background-color: inherit !important;
+  padding-block: 1rem;
+  display: block;
+  height: 100%;
+  color: #2f4858;
+}
+.tabWrapper li button[aria-selected="false"] {
+  background-color: rgb(251, 253, 255) !important;
+}
+.tabWrapper li button:hover {
+  color: #2f4858;
 }
 
-.tabWrapper :is(input, button) {
+.tabWrapper :is(input, button, textarea, select) {
   border-radius: 0;
+}
+
+.contactDetail {
+  max-width: 800px;
 }
