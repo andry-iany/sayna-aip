@@ -44,32 +44,32 @@ const sectors = [
   {
     title:
       "Technologies d’information et de communication (Télécoms, Médias et services numériques)",
-    icon: "/images/mission.svg",
+    icon: "/images/tech.svg",
   },
   {
     title: "Energie (conventionnel et renouvelables)",
-    icon: "/images/mission.svg",
+    icon: "/images/energy.svg",
   },
   {
     title:
       "Grande Consommation : Agro Business, Restauration, Menuiserie, Textile, Mode, Maroquinerie & Cosmétique)",
-    icon: "/images/mission.svg",
+    icon: "/images/agriculture.svg",
   },
   {
     title: "Transport et logistique",
-    icon: "/images/mission.svg",
+    icon: "/images/transport.svg",
   },
   {
     title: "Immobilier",
-    icon: "/images/mission.svg",
+    icon: "/images/real-estate.svg",
   },
   {
     title: "Industrie",
-    icon: "/images/mission.svg",
+    icon: "/images/industry.svg",
   },
   {
     title: "Import, Export, Négoce",
-    icon: "/images/mission.svg",
+    icon: "/images/importation.svg",
   },
 ];
 
@@ -110,8 +110,8 @@ const Solution = () => {
 
   const renderSectors = sectors.map((sector) => (
     <Col key={sector.title} className="px-5 mb-5">
-      <Image src={sector.icon} width="40" height="40" />
-      <p className="pt-2">{sector.title}</p>
+      <Image src={sector.icon} width="50" height="50" />
+      <p className="pt-2 lead">{sector.title}</p>
     </Col>
   ));
 
