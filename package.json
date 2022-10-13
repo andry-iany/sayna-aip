@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "extract:i18n": "formatjs extract '{pages,components,sections}/**/*.{js,ts,tsx}' --format simple --id-interpolation-pattern '[sha512:contenthash:base64:6]' --out-file content/locales/en.json",
+    "compile:i18n": "formatjs compile-folder --ast --format simple content/locales content/compiled-locales",
+    "i18n": "npm run extract:i18n && npm run compile:i18n"
   },
   "dependencies": {
     "bootstrap": "^5.2.0",
@@ -18,14 +21,17 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "18.2.0",
+    "react-intl": "^6.2.0",
     "react-leaflet": "^4.1.0"
   },
   "devDependencies": {
+    "@formatjs/cli": "^5.1.2",
     "@types/leaflet": "^1.8.0",
     "@types/node": "18.7.2",
     "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "babel-plugin-formatjs": "^10.3.30",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.5",
     "typescript": "4.7.4"
