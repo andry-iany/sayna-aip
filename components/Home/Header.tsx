@@ -14,12 +14,14 @@ const Header = () => {
           Vous avez déjà vos premiers clients ?
         </h2>
 
-        <h1 className="text-uppercase mb-4 ">
+        <h1 className="text-uppercase mb-5">
           Faites-vous accompagner par nos <Mark>experts</Mark> et garantissez
           votre <Mark>réussite</Mark>!
         </h1>
 
-        <Button href="/solutions">Découvrez nos services</Button>
+        <Button img="/images/arrow-right.svg" href="/solutions">
+          Nos Services
+        </Button>
       </section>
     </header>
   );

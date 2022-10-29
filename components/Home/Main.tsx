@@ -1,14 +1,13 @@
-import { Row, Col, Card, Container } from "react-bootstrap";
-import Image from "next/image";
+import { Container } from "react-bootstrap";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
-import dynamic from "next/dynamic";
+import CardAndImage from "../ui/CardAndImage";
 
 const Main = () => {
   return (
-    <section className={classes.main + " text-center px-5"}>
+    <section className={classes.main + " px-5"}>
       <Container>
-        <div className={classes.textWrapper + " mb-5"}>
+        <div className={classes.textWrapper + " text-center"}>
           <h2 className="mb-4 h3">AFRICA INTEGRATION PARTNER</h2>
           <p>
             Africa Integration Partner est un cabinet spécialisé dans
@@ -18,69 +17,35 @@ const Main = () => {
           </p>
         </div>
 
-        <Row xs="1" md="2" className="mt-5 mb-3">
-          <Col className="pe-md-4 mb-5 mb-md-0">
-            <Card className="h-100 text-center px-3 py-4">
-              <div
-                className={`${classes.iconWrapper} mx-auto rounded-circle d-flex align-items-center justify-content-center`}
-              >
-                <Image
-                  className="d-block"
-                  width={30}
-                  height={30}
-                  src="/images/growth.svg"
-                  layout="fixed"
-                  alt=""
-                />
-              </div>
-              <Card.Body>
-                <Card.Title className={classes.cardTitle}>
-                  Développer le leadership des entrepreneurs, les outiller et
-                  les assister
-                </Card.Title>
-                <Card.Text>
-                  Diagnostic, Stratégie, Refonte et développement, Formation,
-                  Suivi et accompagnements
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col className="ps-md-4">
-            <Card className="h-100 text-center px-3 py-4">
-              <div
-                className={`${classes.iconWrapper} 
-              mx-auto rounded-circle d-flex align-items-center justify-content-center`}
-              >
-                <Image
-                  className="d-block"
-                  width={30}
-                  height={30}
-                  src="/images/globe.svg"
-                  layout="fixed"
-                  alt=""
-                />
-              </div>
-              <Card.Body>
-                <Card.Title className={classes.cardTitle}>
-                  Présent en Côte d'Ivoire et dans la sous-région Ouest
-                  africaine,
-                </Card.Title>
-                <Card.Text>
-                  Notre force réside dans l'expertise, l'état d'esprit et les
-                  valeurs éthiques de nos équipes et notre approche du conseil
-                  très opérationnel et pragmatique! En plus de vous conseiller,
-                  nous vous accompagnons dans l'exécution et cela fait toute la
-                  différence.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+        <div className={classes.propositions + " d-flex flex-column"}>
+          <CardAndImage
+            title="Développer le leadership des entrepreneurs, les outiller et les assister"
+            img="/images/finance.svg"
+          >
+            <p className="mb-4">
+              Diagnostic, Stratégie, Refonte et développement, Formation, Suivi
+              et accompagnements
+            </p>
+            <Button img="/images/arrow-right.svg" href="/solutions">
+              Nos Services
+            </Button>
+          </CardAndImage>
 
-        <div className="mx-auto mb-5 py-5">
-          <Button img="/images/arrow-right.svg" href="/about">
-            Nous connaitre
-          </Button>
+          <CardAndImage
+            title="Présent en Côte d'Ivoire et dans la sous-région Ouest africaine"
+            img="/images/study.svg"
+            dir="text-right"
+          >
+            <p className="mb-4">
+              Notre force réside dans l'expertise, l'état d'esprit et les
+              valeurs éthiques de nos équipes et notre approche du conseil très
+              opérationnel et pragmatique! En plus de vous conseiller, nous vous
+              accompagnons dans l'exécution et cela fait toute la différence.
+            </p>
+            <Button img="/images/arrow-right.svg" href="/about">
+              Nous connaitre
+            </Button>
+          </CardAndImage>
         </div>
       </Container>
     </section>

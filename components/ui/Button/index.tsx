@@ -19,7 +19,7 @@ const Button = (props: Props) => {
       <BSButton
         className={
           classes.cBtn +
-          " rounded-0 border-0 px-4 d-inline-flex align-items-center gap-3 justify-content-center " +
+          " rounded-pill border-0 px-4 d-inline-flex align-items-center gap-3 justify-content-center " +
           className
         }
       >

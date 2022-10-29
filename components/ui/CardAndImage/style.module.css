@@ -6,7 +6,8 @@
 .cardAndImage h3 {
   font-family: "Brygada", serif;
   font-style: italic;
-  color: #f2b142;
+  /* color: #f2b142; */
+  color: #2f4858;
   font-weight: 600;
   margin-bottom: 1.2rem;
 }
