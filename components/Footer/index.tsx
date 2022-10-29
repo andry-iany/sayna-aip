@@ -65,10 +65,6 @@ const Footer = () => {
             <Row xs={2}>{renderLinks}</Row>
           </div>
           <div className="pt-4 px-4">
-            <div className={classes.address + " text-center mb-3"}>
-              Nukafu, Rue en face de la Direction Générale de la SOTRAL,
-              Immeuble MENSANH, Togo
-            </div>
             <div className={classes.socials + " d-flex justify-content-center"}>
               {renderSocials}
             </div>
