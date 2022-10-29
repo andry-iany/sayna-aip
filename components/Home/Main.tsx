@@ -2,20 +2,19 @@ import { Container } from "react-bootstrap";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
 import CardAndImage from "../ui/CardAndImage";
+import PageSectionTitle from "../ui/PageSectionTitle";
 
 const Main = () => {
   return (
     <section className={classes.main + " px-5"}>
       <Container>
-        <div className={classes.textWrapper + " text-center"}>
-          <h2 className="mb-4 h3">AFRICA INTEGRATION PARTNER</h2>
-          <p>
-            Africa Integration Partner est un cabinet spécialisé dans
+        <PageSectionTitle
+          title="AFRICA INTEGRATION PARTNER"
+          subtitle=" Africa Integration Partner est un cabinet spécialisé dans
             l'accompagnement des PME et des entrepreneurs avec des expertises
             allant de la conception du projet à la recherche de financement en
-            passant par le renforcement des capacités du dirigeant
-          </p>
-        </div>
+            passant par le renforcement des capacités du dirigeant"
+        />
 
         <div className={classes.propositions + " d-flex flex-column"}>
           <CardAndImage
