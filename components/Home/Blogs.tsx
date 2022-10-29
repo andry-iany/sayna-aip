@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Col, Row } from "react-bootstrap";
 import Link from "../ui/Link";
 import PageSectionTitle from "../ui/PageSectionTitle";
@@ -39,6 +40,13 @@ type BlogProps = {
 const Blog = (props: BlogProps) => {
   const { blog } = props;
 
+  const locale = useRouter().locale || "fr";
+
+  const formatDate = new Intl.DateTimeFormat(locale, {
+    weekday: "short",
+    year: "numeric",
+  }).format;
+
   return (
     <article className="position-relative p-0">
       <div className={classes.blogImg + " position-relative"}>
@@ -55,7 +63,7 @@ const Blog = (props: BlogProps) => {
       >
         <span className="fs-3">{blog.createdAt.getDate()}</span>
         <br />
-        <small>Sept. 2022</small>
+        <small className="text-capitalize">{formatDate(blog.createdAt)}</small>
       </div>
       <p className="lead mt-3 mb-0">{blog.title}</p>
       <Link href={"/blogs/" + blog.id} className={classes.blogLink}>
