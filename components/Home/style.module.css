@@ -53,3 +53,25 @@
   padding: 6rem 0 7rem 0;
   gap: 7rem;
 }
+
+.blogImg {
+  height: 200px;
+}
+
+.blogDate {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  color: #fff;
+  transform: translateY(-30%);
+  background-color: #2f4858;
+}
+
+.blogLink {
+  text-decoration: underline;
+  color: #2f4858;
+}
+
+.blogsWrapper {
+  padding: 4rem 0;
+}

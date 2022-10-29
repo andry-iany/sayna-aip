@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import Ideals from "../About/Ideals";
+import Blogs from "./Blogs";
 
 const Main = () => {
   return (
@@ -87,6 +88,8 @@ const Main = () => {
             Nous Contacter
           </Button>
         </div>
+
+        <Blogs />
       </Container>
     </section>
   );
