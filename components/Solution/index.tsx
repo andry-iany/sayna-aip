@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
+import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import classes from "./style.module.css";
 
@@ -75,33 +76,19 @@ const sectors = [
 
 const Solution = () => {
   const renderSolutions = solutions.map((solution, idx) => (
-    <Row
+    <CardAndImage
       key={solution.title}
-      className={`
-        ${classes.solution} 
-        ${idx % 2 ? "flex-row" : "flex-row-reverse"}
-        justify-content-center
-        gap-4
-      `}
+      img={solution.image}
+      title={solution.title}
+      dir={idx % 2 === 0 ? "text-left" : "text-right"}
     >
-      <Col
-        md={4}
-        className={
-          classes.solutionImg + " d-none d-md-block position-relative px-5"
-        }
-      >
-        <Image src={solution.image} layout="fill" />
-      </Col>
-      <Col md={7} className="px-5">
-        <h3>{solution.title}</h3>
-        <p> {solution.subtitle} </p>
-        <ul>
-          {solution.options.map((val, idx) => (
-            <li key={idx}> {val} </li>
-          ))}
-        </ul>
-      </Col>
-    </Row>
+      <p> {solution.subtitle} </p>
+      <ul>
+        {solution.options.map((val, idx) => (
+          <li key={idx}> {val} </li>
+        ))}
+      </ul>
+    </CardAndImage>
   ));
 
   const renderSectors = sectors.map((sector) => (
@@ -117,7 +104,9 @@ const Solution = () => {
         title="Nos services"
         subtitle="Nous intervenons dans:"
       />
-      <div className="mb-4">{renderSolutions}</div>
+      <div className={classes.allSolutions + " d-flex flex-column"}>
+        {renderSolutions}
+      </div>
       <PageSectionTitle title="Nos secteurs" subtitle="" />
       <Row xs="1" md="2" lg="3" className={classes.sectors + " mb-5"}>
         {renderSectors}
