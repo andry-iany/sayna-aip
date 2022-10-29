@@ -1,12 +1,13 @@
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import classes from "./style.module.css";
 import Button from "../ui/Button";
 import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
+import Ideals from "../About/Ideals";
 
 const Main = () => {
   return (
-    <section className={classes.main + " px-5"}>
+    <section className={classes.main + " px-2 px-md-5"}>
       <Container>
         <PageSectionTitle
           title="AFRICA INTEGRATION PARTNER"
@@ -45,6 +46,46 @@ const Main = () => {
               Nous connaitre
             </Button>
           </CardAndImage>
+        </div>
+
+        <Ideals />
+
+        <PageSectionTitle
+          title="Nos addresses"
+          subtitle="Présent en Côte d'Ivoire et dans la sous-région Ouest africaine"
+        />
+
+        <Row xs={1} sm={2} md={4} className="text-center mx-auto">
+          <Col className="p-3">
+            <div className="border h-100 shadow-sm py-5 px-4">
+              <h3>Togo</h3>
+              <p className="m-0">Nukafu</p>
+            </div>
+          </Col>
+          <Col className="p-3">
+            <div className="border h-100 shadow-sm py-5 px-4">
+              <h3>Côte d'Ivoire</h3>
+              <p className="m-0">Cocody Ambassades</p>
+            </div>
+          </Col>
+          <Col className="p-3">
+            <div className="border h-100 shadow-sm py-5 px-4">
+              <h3>Benin</h3>
+              <p className="m-0">Cité vie nouvelle</p>
+            </div>
+          </Col>
+          <Col className="p-3">
+            <div className="border h-100 shadow-sm py-5 px-4">
+              <h3>Niger</h3>
+              <p className="m-0">Niamey</p>
+            </div>
+          </Col>
+        </Row>
+
+        <div className=" my-5 d-flex justify-content-center">
+          <Button img="/images/arrow-right.svg" href="/contact">
+            Nous Contacter
+          </Button>
         </div>
       </Container>
     </section>
