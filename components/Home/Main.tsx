@@ -4,7 +4,30 @@ import Button from "../ui/Button";
 import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import Ideals from "../About/Ideals";
-import Blogs from "./Blogs";
+import Blogs from "../Stories/Blogs";
+
+import type { Blog } from "../Stories/Blog";
+
+const blogs: Blog[] = [
+  {
+    createdAt: new Date(),
+    id: "1",
+    img: "/images/hero.jpg",
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    createdAt: new Date(),
+    id: "2",
+    img: "/images/team.jpg",
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    createdAt: new Date(),
+    id: "3",
+    img: "/images/team_2.jpg",
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+];
 
 const Main = () => {
   return (
@@ -89,7 +112,7 @@ const Main = () => {
           </Button>
         </div>
 
-        <Blogs />
+        <Blogs blogs={blogs.slice(0, 3)} />
       </Container>
     </section>
   );
