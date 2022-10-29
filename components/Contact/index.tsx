@@ -29,32 +29,34 @@ const contacts = [
 
 const Contact = () => {
   const renderContacts = contacts.map((contact) => (
-    <Col key={contact.country} className={classes.country + " px-4 mb-5"}>
-      <h3 className="mb-4">{contact.country} </h3>
-      <div className={"d-flex align-items-start gap-3"}>
-        <span className={classes.img}>
-          <Image src="/images/location.svg" layout="fill" />
-        </span>
-        <p className="mb-3">{contact.location}</p>
+    <Col key={contact.country} className={classes.country + " px-3 mb-5"}>
+      <div className="border p-3 h-100 shadow-sm">
+        <h3 className="mb-4">{contact.country} </h3>
+        <div className={"d-flex align-items-start gap-3"}>
+          <span className={classes.img}>
+            <Image src="/images/location.svg" layout="fill" />
+          </span>
+          <p className="mb-3">{contact.location}</p>
+        </div>
+
+        {contact.phone && (
+          <div className={"d-flex align-items-start gap-3"}>
+            <span className={classes.img}>
+              <Image src="/images/phone.svg" layout="fill" />
+            </span>
+            <p className="mb-3">{contact.phone}</p>
+          </div>
+        )}
+
+        {contact.email && (
+          <div className={"d-flex align-items-start gap-3"}>
+            <span className={classes.img}>
+              <Image src="/images/email.svg" layout="fill" />
+            </span>
+            <p className="mb-3">{contact.email}</p>
+          </div>
+        )}
       </div>
-
-      {contact.phone && (
-        <div className={"d-flex align-items-start gap-3"}>
-          <span className={classes.img}>
-            <Image src="/images/phone.svg" layout="fill" />
-          </span>
-          <p className="mb-3">{contact.phone}</p>
-        </div>
-      )}
-
-      {contact.email && (
-        <div className={"d-flex align-items-start gap-3"}>
-          <span className={classes.img}>
-            <Image src="/images/email.svg" layout="fill" />
-          </span>
-          <p className="mb-3">{contact.email}</p>
-        </div>
-      )}
     </Col>
   ));
 
