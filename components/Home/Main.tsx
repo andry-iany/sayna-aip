@@ -106,7 +106,7 @@ const Main = () => {
           </Col>
         </Row>
 
-        <div className=" my-5 d-flex justify-content-center">
+        <div className=" my-5 pb-5 d-flex justify-content-center">
           <Button img="/images/arrow-right.svg" href="/contact">
             Nous Contacter
           </Button>
