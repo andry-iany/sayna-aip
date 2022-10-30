@@ -1,11 +1,11 @@
 .cBtn {
-  background-color: #e4a435 !important;
+  background-color: var(--clr-primary) !important;
   text-transform: uppercase;
   font-weight: 500;
 }
 
 .cBtn:hover {
-  background-color: #2f4858 !important;
+  background-color: var(--clr-secondary) !important;
 }
 
 .img {

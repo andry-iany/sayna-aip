@@ -42,7 +42,7 @@
   content: "";
   width: 40%;
   height: 3px;
-  background-color: #f2b142;
+  background-color: var(--clr-primary);
   top: 110%;
   left: 50%;
   transform: translate(-50%);
@@ -62,14 +62,14 @@
   position: absolute;
   top: 0;
   left: 1rem;
-  color: #fff;
+  color: var(--clr-white);
   transform: translateY(-30%);
-  background-color: #2f4858;
+  background-color: var(--clr-secondary);
 }
 
 .blogLink {
   text-decoration: underline;
-  color: #2f4858;
+  color: var(--clr-secondary);
 }
 
 .blogsWrapper {

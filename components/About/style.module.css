@@ -16,7 +16,7 @@
   content: "";
   width: 40%;
   height: 3px;
-  background-color: #f2b142;
+  background-color: var(--clr-primary);
   top: 110%;
   left: 50%;
   transform: translate(-50%);
@@ -31,7 +31,7 @@
 .offerWrapper h3 {
   font-family: "Brygada", serif;
   font-style: italic;
-  color: #f2b142;
+  color: var(--clr-primary);
   font-weight: 550;
 }
 
@@ -49,8 +49,8 @@
 }
 
 .ideals {
-  background-color: #2f4858;
-  box-shadow: 0 0 0 100vmax #2f4858;
+  background-color: var(--clr-secondary);
+  box-shadow: 0 0 0 100vmax var(--clr-secondary);
   clip-path: inset(0 -100vmax);
   margin-bottom: 6rem;
 }
@@ -77,7 +77,7 @@
 .teamOverlay {
   opacity: 0;
   transition: opacity ease 0.3s;
-  background-color: #2f4858;
+  background-color: var(--clr-secondary);
   max-height: 100%;
 }
 .teamName {

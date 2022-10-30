@@ -12,7 +12,7 @@
   content: "";
   width: 40%;
   height: 3px;
-  background-color: #f2b142;
+  background-color: var(--clr-primary);
   top: 110%;
   left: 50%;
   transform: translate(-50%);

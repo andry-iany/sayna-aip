@@ -27,13 +27,13 @@
   padding-block: 1rem;
   display: block;
   height: 100%;
-  color: #2f4858;
+  color: var(--clr-secondary);
 }
 .tabWrapper li button[aria-selected="false"] {
   background-color: rgb(251, 253, 255) !important;
 }
 .tabWrapper li button:hover {
-  color: #2f4858;
+  color: var(--clr-secondary);
 }
 
 .tabWrapper :is(input, button, textarea, select) {

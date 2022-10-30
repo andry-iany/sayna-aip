@@ -31,10 +31,10 @@ a:hover {
 
 :root {
   --primary-accentuate: #c3610f;
-  --secondary-accentuate: #ffbd4d;
-  --primary-dark: #063fce;
-  --secondary-dark: #454555;
-  --light: #a6a6a6;
-  --lighter: #c5bcff;
   --white: #fff;
+
+  --clr-secondary: #2f4858;
+  --clr-primary: #f2b142;
+  --clr-light: #cecdcd;
+  --clr-white: #fff;
 }

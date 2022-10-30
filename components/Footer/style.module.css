@@ -1,5 +1,5 @@
 .footer {
-  background-color: #2f4858;
+  background-color: var(--clr-secondary);
 }
 
 .socials > * {
@@ -33,6 +33,6 @@
 }
 
 .legal {
-  color: #cecdcd;
+  color: var(--clr-light);
   font-size: 0.85em;
 }

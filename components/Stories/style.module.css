@@ -17,12 +17,12 @@
   position: absolute;
   top: 0;
   left: 1rem;
-  color: #fff;
+  color: var(--clr-white);
   transform: translateY(-30%);
-  background-color: #2f4858;
+  background-color: var(--clr-secondary);
 }
 
 .blogLink {
   text-decoration: underline;
-  color: #2f4858;
+  color: var(--clr-secondary);
 }
