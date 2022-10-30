@@ -24,7 +24,7 @@ const programs = [
 const Programs = () => {
   const renderPrograms = programs.map((prg) => (
     <Col key={prg.title} className="px-3 text-center">
-      <Card className="py-3">
+      <Card className="py-3 rounded-0 shadow-sm">
         <Card.Body>
           <Card.Title className={classes.cardTitle + " mb-3"}>
             {prg.title}
