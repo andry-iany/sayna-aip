@@ -25,7 +25,13 @@ const Button = (props: Props) => {
       >
         {children}
         {img && (
-          <Image className={classes.img} src={img} width={20} height={20} />
+          <Image
+            className={classes.img}
+            src={img}
+            width={20}
+            height={20}
+            alt=""
+          />
         )}
       </BSButton>
     </Link>

@@ -27,7 +27,7 @@ const CardAndImage = (props: Props) => {
           classes.cardAndImageImg + " d-none d-md-block position-relative px-5"
         }
       >
-        <Image src={img} layout="fill" />
+        <Image src={img} layout="fill" alt="" />
       </Col>
       <Col md={6} className="px-5 d-flex flex-column justify-content-center">
         <h3>{title}</h3>

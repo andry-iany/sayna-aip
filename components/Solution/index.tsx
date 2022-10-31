@@ -96,7 +96,7 @@ const Solution = () => {
   const renderSectors = sectors.map((sector) => (
     <Col key={sector.title} className="px-5 mb-5">
       <AnimateOnView>
-        <Image src={sector.icon} width="60" height="60" />
+        <Image src={sector.icon} width="60" height="60" alt={sector.title} />
         <p className="pt-2 lead">{sector.title}</p>
       </AnimateOnView>
     </Col>

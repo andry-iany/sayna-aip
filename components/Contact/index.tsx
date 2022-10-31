@@ -36,7 +36,7 @@ const Contact = () => {
           <h3 className="mb-4">{contact.country} </h3>
           <div className={"d-flex align-items-start gap-3"}>
             <span className={classes.img}>
-              <Image src="/images/location.svg" layout="fill" />
+              <Image src="/images/location.svg" layout="fill" alt="" />
             </span>
             <p className="mb-3">{contact.location}</p>
           </div>
@@ -44,7 +44,7 @@ const Contact = () => {
           {contact.phone && (
             <div className={"d-flex align-items-start gap-3"}>
               <span className={classes.img}>
-                <Image src="/images/phone.svg" layout="fill" />
+                <Image src="/images/phone.svg" layout="fill" alt="" />
               </span>
               <p className="mb-3">{contact.phone}</p>
             </div>
@@ -53,7 +53,7 @@ const Contact = () => {
           {contact.email && (
             <div className={"d-flex align-items-start gap-3"}>
               <span className={classes.img}>
-                <Image src="/images/email.svg" layout="fill" />
+                <Image src="/images/email.svg" layout="fill" alt="" />
               </span>
               <p className="mb-3">{contact.email}</p>
             </div>
