@@ -21,11 +21,16 @@
 
 .pageTitle h1 {
   max-width: 945px;
+  font-family: "Brygada", serif;
+  font-size: 3.2em;
+  line-height: 1;
+  color: #173141;
 }
 
 .pageTitle h2 {
   font-family: "Brygada", serif;
   font-style: italic;
+  color: #173141;
 }
 
 .textWrapper {
