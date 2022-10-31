@@ -1,3 +1,4 @@
+import AnimateOnView from "../ui/AnimateOnView";
 import classes from "./style.module.css";
 
 const aboutTexts = [
@@ -17,20 +18,21 @@ const aboutTexts = [
 
 const AboutTexts = () => {
   const renderAboutText = aboutTexts.map((txt, idx) => (
-    <section
-      key={idx}
-      className={`
+    <AnimateOnView key={idx}>
+      <section
+        className={`
           ${classes.offerWrapper}
           ${idx % 2 ? "flex-md-row-reverse" : "flex-md-row"}
           d-flex flex-column justify-content-center align-items-center align-items-md-start 
           mb-4 mb-md-5 pb-md-5 text-center
         `}
-    >
-      <h3 className="py-2 w-100">{txt.title}</h3>
-      <p className={`w-100 ${idx % 2 ? "text-md-end" : "text-md-start"}`}>
-        {txt.body}
-      </p>
-    </section>
+      >
+        <h3 className="py-2 w-100">{txt.title}</h3>
+        <p className={`w-100 ${idx % 2 ? "text-md-end" : "text-md-start"}`}>
+          {txt.body}
+        </p>
+      </section>
+    </AnimateOnView>
   ));
 
   return <>{renderAboutText}</>;

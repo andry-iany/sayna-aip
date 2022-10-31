@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
+import AnimateOnView from "../ui/AnimateOnView";
 import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import classes from "./style.module.css";
@@ -76,34 +77,39 @@ const sectors = [
 
 const Solution = () => {
   const renderSolutions = solutions.map((solution, idx) => (
-    <CardAndImage
-      key={solution.title}
-      img={solution.image}
-      title={solution.title}
-      dir={idx % 2 === 0 ? "text-left" : "text-right"}
-    >
-      <p> {solution.subtitle} </p>
-      <ul>
-        {solution.options.map((val, idx) => (
-          <li key={idx}> {val} </li>
-        ))}
-      </ul>
-    </CardAndImage>
+    <AnimateOnView key={solution.title} amount={0.3}>
+      <CardAndImage
+        img={solution.image}
+        title={solution.title}
+        dir={idx % 2 === 0 ? "text-left" : "text-right"}
+      >
+        <p> {solution.subtitle} </p>
+        <ul>
+          {solution.options.map((val, idx) => (
+            <li key={idx}> {val} </li>
+          ))}
+        </ul>
+      </CardAndImage>
+    </AnimateOnView>
   ));
 
   const renderSectors = sectors.map((sector) => (
     <Col key={sector.title} className="px-5 mb-5">
-      <Image src={sector.icon} width="60" height="60" />
-      <p className="pt-2 lead">{sector.title}</p>
+      <AnimateOnView>
+        <Image src={sector.icon} width="60" height="60" />
+        <p className="pt-2 lead">{sector.title}</p>
+      </AnimateOnView>
     </Col>
   ));
 
   return (
     <Container className={classes.container}>
-      <PageSectionTitle
-        title="Nos services"
-        subtitle="Nous intervenons dans:"
-      />
+      <AnimateOnView>
+        <PageSectionTitle
+          title="Nos services"
+          subtitle="Nous intervenons dans:"
+        />
+      </AnimateOnView>
       <div className={classes.allSolutions + " d-flex flex-column"}>
         {renderSolutions}
       </div>

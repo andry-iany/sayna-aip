@@ -1,4 +1,5 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
+import AnimateOnView from "../ui/AnimateOnView";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import classes from "./style.module.css";
 
@@ -23,15 +24,17 @@ const programs = [
 
 const Programs = () => {
   const renderPrograms = programs.map((prg) => (
-    <Col key={prg.title} className="px-3 text-center">
-      <Card className="py-3 rounded-0 shadow-sm">
-        <Card.Body>
-          <Card.Title className={classes.cardTitle + " mb-3"}>
-            {prg.title}
-          </Card.Title>
-          <Card.Text>{prg.body}</Card.Text>
-        </Card.Body>
-      </Card>
+    <Col key={prg.title} className="px-3 text-center mb-3">
+      <AnimateOnView>
+        <Card className="py-3 rounded-0 shadow-sm">
+          <Card.Body>
+            <Card.Title className={classes.cardTitle + " mb-3"}>
+              {prg.title}
+            </Card.Title>
+            <Card.Text>{prg.body}</Card.Text>
+          </Card.Body>
+        </Card>
+      </AnimateOnView>
     </Col>
   ));
 
