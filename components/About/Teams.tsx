@@ -27,7 +27,7 @@ const Teams = () => {
     <Col className="mb-4" key={team.name}>
       <AnimateOnView amount={0.4}>
         <Card
-          className={`${classes.teamCard} rounded-0 border-0 bg-dark text-white`}
+          className={`${classes.teamCard} rounded-0 border-0 bg-light text-white`}
           style={{ height: "400px" }}
         >
           <Image
