@@ -45,7 +45,7 @@ const Main = () => {
         </AnimateOnView>
 
         <div className={classes.propositions + " d-flex flex-column"}>
-          <AnimateOnView>
+          <AnimateOnView amount={0.6}>
             <CardAndImage
               title="Développer le leadership des entrepreneurs, les outiller et les assister"
               img="/images/finance.svg"

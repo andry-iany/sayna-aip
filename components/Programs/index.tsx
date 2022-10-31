@@ -40,7 +40,9 @@ const Programs = () => {
 
   return (
     <Container className={classes.container}>
-      <PageSectionTitle title="Nos programmes" subtitle="" />
+      <AnimateOnView>
+        <PageSectionTitle title="Nos programmes" subtitle="" />
+      </AnimateOnView>
       <Row xs="1" sm="2" md="4" className="mb-5 pb-5">
         {renderPrograms}
       </Row>

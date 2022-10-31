@@ -113,7 +113,9 @@ const Solution = () => {
       <div className={classes.allSolutions + " d-flex flex-column"}>
         {renderSolutions}
       </div>
-      <PageSectionTitle title="Nos secteurs" subtitle="" />
+      <AnimateOnView>
+        <PageSectionTitle title="Nos secteurs" subtitle="" />
+      </AnimateOnView>
       <Row xs="1" md="2" lg="3" className={classes.sectors + " mb-5"}>
         {renderSectors}
       </Row>
