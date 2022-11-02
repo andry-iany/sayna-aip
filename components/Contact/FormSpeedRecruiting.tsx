@@ -14,12 +14,14 @@ const FormSpeedRecruiting = () => {
 
       <Form.Group controlId="formFile" className="mb-4">
         <Form.Label>Votre CV</Form.Label>
-        <Form.Control name="cv" type="file" required />
+        <Form.Control name="cv" type="file" required accept="image/*, .pdf" />
+        <Form.Text>Vous pouvez importer des fichiers images ou .pdf</Form.Text>
       </Form.Group>
 
       <Form.Group controlId="formFile" className="mb-4">
         <Form.Label>Lettre de motivation</Form.Label>
-        <Form.Control name="lm" type="file" required />
+        <Form.Control name="lm" type="file" required accept="image/*, .pdf" />
+        <Form.Text>Vous pouvez importer des fichiers images ou .pdf</Form.Text>
       </Form.Group>
 
       <Button className="w-100 my-4" type="submit">
