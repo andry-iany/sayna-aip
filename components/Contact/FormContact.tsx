@@ -15,10 +15,17 @@ const FormContact = () => {
     setValidated(true);
   };
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form
+      noValidate
+      validated={validated}
+      onSubmit={handleSubmit}
+      name="query"
+      method="POST"
+      data-netlify="true"
+    >
       <Form.Group className="mb-3" controlId="name">
         <Form.Label>Nom</Form.Label>
-        <Form.Control type="text" placeholder="Votre nom" required />
+        <Form.Control name="nom" type="text" placeholder="Votre nom" required />
         <Form.Control.Feedback type="invalid">
           Veuillez saisir votre nom
         </Form.Control.Feedback>
@@ -26,7 +33,12 @@ const FormContact = () => {
 
       <Form.Group className="mb-3" controlId="prénoms">
         <Form.Label>Prénoms</Form.Label>
-        <Form.Control type="text" placeholder="Vos prénoms" required />
+        <Form.Control
+          name="prénom"
+          type="text"
+          placeholder="Vos prénoms"
+          required
+        />
         <Form.Control.Feedback type="invalid">
           Veuillez saisir votre prénoms
         </Form.Control.Feedback>
@@ -34,7 +46,12 @@ const FormContact = () => {
 
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Votre email" required />
+        <Form.Control
+          name="email"
+          type="email"
+          placeholder="Votre email"
+          required
+        />
         <Form.Control.Feedback type="invalid">
           Veuillez saisir votre email
         </Form.Control.Feedback>
@@ -42,7 +59,12 @@ const FormContact = () => {
 
       <Form.Group className="mb-3">
         <Form.Label>Telephone</Form.Label>
-        <Form.Control type="tel" placeholder="+1 23 456 789" required />
+        <Form.Control
+          name="tel"
+          type="tel"
+          placeholder="+1 23 456 789"
+          required
+        />
         <Form.Control.Feedback type="invalid">
           Veuillez saisir votre telephone
         </Form.Control.Feedback>
@@ -50,12 +72,12 @@ const FormContact = () => {
 
       <Form.Group className="mb-3">
         <Form.Label>Société</Form.Label>
-        <Form.Control type="text" placeholder="Votre société" />
+        <Form.Control name="société" type="text" placeholder="Votre société" />
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Fonction</Form.Label>
-        <Form.Select required>
+        <Form.Select required name="fonction">
           <option></option>
           <option value="entrepreneur">Entrepreneur</option>
           <option value="fonctionnaire">Fonctionnaire</option>
@@ -68,7 +90,7 @@ const FormContact = () => {
 
       <Form.Group className="mb-3">
         <Form.Label>Comment aviez-vous entendu parler de nous ?</Form.Label>
-        <Form.Select required>
+        <Form.Select required name="comment-trouver">
           <option></option>
           <option value="Séminaire">Séminaire</option>
           <option value="LinkedIn">LinkedIn</option>
@@ -86,7 +108,7 @@ const FormContact = () => {
 
       <Form.Group className="mb-3">
         <Form.Label>Candidature</Form.Label>
-        <Form.Select required>
+        <Form.Select required name="candidature">
           <option></option>
           <option value=" Jeunes diplômés"> Jeunes diplômés</option>
           <option value="Entrepreneurs">Entrepreneurs</option>
@@ -100,7 +122,7 @@ const FormContact = () => {
 
       <Form.Group className="mb-3">
         <Form.Label>Pays</Form.Label>
-        <Form.Select required>
+        <Form.Select required name="pays">
           <option></option>
           <option value="Togo"> Togo</option>
           <option value="Côte d'Ivoire">Côte d'Ivoire</option>
@@ -114,10 +136,17 @@ const FormContact = () => {
 
       <Form.Group className="mb-3" controlId="message">
         <Form.Label>Message</Form.Label>
-        <Form.Control type="text" placeholder="Votre message" as="textarea" />
+        <Form.Control
+          name="message"
+          type="text"
+          placeholder="Votre message"
+          as="textarea"
+        />
       </Form.Group>
 
-      <Button className="w-100 my-4">Envoyer</Button>
+      <Button className="w-100 my-4" type="submit">
+        Envoyer
+      </Button>
     </Form>
   );
 };

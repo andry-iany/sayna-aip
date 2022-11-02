@@ -9,33 +9,35 @@ type Props = {
   img?: string;
   href?: string;
   className?: string;
+  type?: "button" | "submit";
 };
 
 const Button = (props: Props) => {
-  const { children, img, href, className } = props;
+  const { children, img, href, className, type = "button" } = props;
 
-  return (
-    <Link href={href}>
-      <BSButton
-        className={
-          classes.cBtn +
-          " rounded-pill border-0 px-4 d-inline-flex align-items-center gap-3 justify-content-center " +
-          className
-        }
-      >
-        {children}
-        {img && (
-          <Image
-            className={classes.img}
-            src={img}
-            width={20}
-            height={20}
-            alt=""
-          />
-        )}
-      </BSButton>
-    </Link>
+  const renderBtn = () => (
+    <BSButton
+      className={
+        classes.cBtn +
+        " rounded-pill border-0 px-4 d-inline-flex align-items-center gap-3 justify-content-center " +
+        className
+      }
+      type={type}
+    >
+      {children}
+      {img && (
+        <Image
+          className={classes.img}
+          src={img}
+          width={20}
+          height={20}
+          alt=""
+        />
+      )}
+    </BSButton>
   );
+
+  return href ? <Link href={href}>{renderBtn()}</Link> : renderBtn();
 };
 
 export default Button;
