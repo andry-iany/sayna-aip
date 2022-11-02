@@ -3,6 +3,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import classes from "./style.module.css";
 import Logo from "../Logo";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const links = [
   { text: "à propos", href: "/about" },
@@ -31,7 +32,7 @@ const TopNavbar = () => {
     <Navbar bg="white" expand="lg" className="p-0 fixed-top w-100 shadow">
       <Container className="py-4">
         <Link href="/" className={classes.logo + " navbar-brand p-0"}>
-          AIP
+          <Image src="/images/logo.svg" layout="fill" objectFit="contain" />
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="align-items-center py-4 py-lg-0">

@@ -48,7 +48,7 @@ const Main = () => {
           <AnimateOnView amount={0.6}>
             <CardAndImage
               title="Développer le leadership des entrepreneurs, les outiller et les assister"
-              img="/images/finance.svg"
+              img="/images/home-leadership.svg"
             >
               <p className="mb-4">
                 Diagnostic, Stratégie, Refonte et développement, Formation,
@@ -63,7 +63,7 @@ const Main = () => {
           <AnimateOnView>
             <CardAndImage
               title="Présent en Côte d'Ivoire et dans la sous-région Ouest africaine"
-              img="/images/study.svg"
+              img="/images/home-present.svg"
               dir="text-right"
             >
               <p className="mb-4">

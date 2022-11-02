@@ -22,7 +22,9 @@
 }
 
 .logo {
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-  font-family: "Brygada", serif;
+  /* the image is 26:15 */
+  height: 50px;
+  width: calc(50px * 26 / 15);
+  position: relative;
+  cursor: pointer;
 }
