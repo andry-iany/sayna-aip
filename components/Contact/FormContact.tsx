@@ -22,7 +22,10 @@ const FormContact = () => {
       name="query"
       method="POST"
       data-netlify="true"
+      data-netlify-honeypot="bot-field"
     >
+      <input type="hidden" name="form-name" value="query" />
+
       <Form.Group className="mb-3" controlId="name">
         <Form.Label>Nom</Form.Label>
         <Form.Control name="nom" type="text" placeholder="Votre nom" required />

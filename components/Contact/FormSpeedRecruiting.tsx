@@ -4,11 +4,14 @@ import Form from "react-bootstrap/Form";
 const FormSpeedRecruiting = () => {
   return (
     <Form
-      name="query"
+      name="speed-recruiting"
       method="POST"
       data-netlify="true"
+      data-netlify-honeypot="bot-field"
       encType="multipart/form-data"
     >
+      <input type="hidden" name="form-name" value="speed-recruiting" />
+
       <Form.Group controlId="formFile" className="mb-4">
         <Form.Label>Votre CV</Form.Label>
         <Form.Control name="cv" type="file" required />
