@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import Mark from "../ui/Mark";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { useTranslation } from "../../hooks";
 
 const questions = [
   "Vous avez une idée ?",
@@ -12,6 +13,8 @@ const questions = [
 
 const Header = () => {
   const questionEltRef = useRef<HTMLSpanElement | null>(null);
+
+  const t = useTranslation();
 
   useEffect(() => {
     const headingElt = questionEltRef.current;
@@ -46,7 +49,7 @@ const Header = () => {
         </h1>
 
         <Button img="/images/arrow-right.svg" href="/solutions">
-          Nos Services
+          {t("cta.our-services")}
         </Button>
       </section>
     </header>

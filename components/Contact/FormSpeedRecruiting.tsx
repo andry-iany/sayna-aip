@@ -1,7 +1,10 @@
 import Button from "../ui/Button";
 import Form from "react-bootstrap/Form";
+import { useTranslation } from "../../hooks";
 
 const FormSpeedRecruiting = () => {
+  const t = useTranslation();
+
   return (
     <Form
       name="speed-recruiting"
@@ -25,7 +28,7 @@ const FormSpeedRecruiting = () => {
       </Form.Group>
 
       <Button className="w-100 my-4" type="submit">
-        Envoyer
+        {t("cta.send")}
       </Button>
     </Form>
   );

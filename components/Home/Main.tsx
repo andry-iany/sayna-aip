@@ -8,6 +8,7 @@ import Blogs from "../Stories/Blogs";
 
 import type { Blog } from "../Stories/Blog";
 import AnimateOnView from "../ui/AnimateOnView";
+import { useTranslation } from "../../hooks";
 
 const blogs: Blog[] = [
   {
@@ -31,6 +32,8 @@ const blogs: Blog[] = [
 ];
 
 const Main = () => {
+  const t = useTranslation();
+
   return (
     <section className={classes.main + " px-2 px-md-5"}>
       <Container>
@@ -55,7 +58,7 @@ const Main = () => {
                 Suivi et accompagnements
               </p>
               <Button img="/images/arrow-right.svg" href="/solutions">
-                Nos Services
+                {t("cta.our-services")}
               </Button>
             </CardAndImage>
           </AnimateOnView>
@@ -74,7 +77,7 @@ const Main = () => {
                 différence.
               </p>
               <Button img="/images/arrow-right.svg" href="/about">
-                Nous connaitre
+                {t("cta.about-us")}
               </Button>
             </CardAndImage>
           </AnimateOnView>
@@ -121,7 +124,7 @@ const Main = () => {
 
         <div className=" my-5 pb-5 d-flex justify-content-center">
           <Button img="/images/arrow-right.svg" href="/contact">
-            Nous Contacter
+            {t("cta.contact-us")}
           </Button>
         </div>
 

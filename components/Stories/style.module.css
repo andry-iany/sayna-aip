@@ -25,4 +25,5 @@
 .blogLink {
   text-decoration: underline;
   color: var(--clr-secondary);
+  cursor: pointer;
 }

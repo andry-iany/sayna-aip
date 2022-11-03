@@ -7,6 +7,10 @@ import { useEffect } from "react";
 import { SSRProvider } from "react-bootstrap";
 import Layout from "../components/Layout";
 
+// i18n
+
+import { appWithTranslation } from "next-i18next";
+
 // progress
 import "../setup/progress/style.css";
 import { setupNavProgress } from "../setup/progress";
@@ -30,4 +34,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

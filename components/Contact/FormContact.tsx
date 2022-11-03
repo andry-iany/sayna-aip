@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Button from "../ui/Button";
 import Form from "react-bootstrap/Form";
+import { useTranslation } from "../../hooks";
 
 const FormContact = () => {
+  const t = useTranslation();
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event: any) => {
@@ -148,7 +150,7 @@ const FormContact = () => {
       </Form.Group>
 
       <Button className="w-100 my-4" type="submit">
-        Envoyer
+        {t("cta.send")}
       </Button>
     </Form>
   );

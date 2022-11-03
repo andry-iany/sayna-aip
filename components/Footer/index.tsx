@@ -2,6 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import Link from "../ui/Link";
 import Image from "next/image";
 import classes from "./style.module.css";
+import { useTranslation } from "../../hooks";
+import { useMemo } from "react";
 
 const socials = [
   {
@@ -26,16 +28,21 @@ const socials = [
   },
 ];
 
-const links = [
-  { text: "Acceuil", href: "/" },
-  { text: "à propos", href: "/about" },
-  { text: "solutions", href: "/solutions" },
-  { text: "nos programmes", href: "/programs" },
-  { text: "stories", href: "/stories" },
-  { text: "contact", href: "/contact" },
-];
-
 const Footer = () => {
+  const t = useTranslation();
+
+  const links = useMemo(
+    () => [
+      { text: t("link.home"), href: "/" },
+      { text: t("link.about"), href: "/about" },
+      { text: t("link.solutions"), href: "/solutions" },
+      { text: t("link.programs"), href: "/programs" },
+      { text: t("link.stories"), href: "/stories" },
+      { text: t("link.contact"), href: "/contact" },
+    ],
+    [t]
+  );
+
   const renderSocials = socials.map((social) => (
     <a
       key={social.href}
@@ -61,7 +68,7 @@ const Footer = () => {
       <Container>
         <div className="d-flex justify-content-between flex-column flex-md-row">
           <div>
-            <h5 className="mb-4">Liens utiles</h5>
+            <h5 className="mb-4">{t("footer.heading_link")}</h5>
             <Row xs={2}>{renderLinks}</Row>
           </div>
           <div className="pt-4 px-4">
@@ -76,7 +83,9 @@ const Footer = () => {
             Partner
           </span>
           {" | "}
-          <Link className="text-decoration-underline">Mentions légales</Link>
+          <Link className="text-decoration-underline">
+            {t("link.legal-notice")}
+          </Link>
         </div>
       </Container>
     </footer>

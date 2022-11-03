@@ -2,6 +2,7 @@ import classes from "./style.module.css";
 import Image from "next/image";
 import Link from "../ui/Link";
 import { useRouter } from "next/router";
+import { useTranslation } from "../../hooks";
 
 export type Blog = {
   createdAt: Date;
@@ -15,6 +16,8 @@ type BlogProps = {
 };
 
 const Blog = (props: BlogProps) => {
+  const t = useTranslation();
+
   const { blog } = props;
 
   const locale = useRouter().locale || "fr";
@@ -44,7 +47,7 @@ const Blog = (props: BlogProps) => {
       </div>
       <p className="lead mt-3 mb-0">{blog.title}</p>
       <Link href={"/blogs/" + blog.id} className={classes.blogLink}>
-        Voir plus &gt;
+        <span>{t("cta.read-more")} &gt;</span>
       </Link>
     </article>
   );
