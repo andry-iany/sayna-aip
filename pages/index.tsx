@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "../hooks";
 import api from "../services/apiService";
 import { createContext } from "react";
+import { Blog } from "../components/Stories/Blog";
 
 export const ContentContext = createContext({});
 
@@ -31,13 +32,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const localizedData = await serverSideTranslations(locale, ["common"]);
 
-  const res = await api.get<any>(`/home?populate=deep&locale=${locale}`);
-  const data = res.data?.data?.attributes;
+  const homeContentRes = await api.get<any>(
+    `/home?populate=deep&locale=${locale}`
+  );
+  const homeContent = homeContentRes.data?.data?.attributes;
+
+  const blogsRes = await api.get<any>(
+    `/articles?populate=deep&locale=${locale}&sort=updatedAt:desc&pagination[limit]=3`
+  );
+  const blogs = blogsRes.data?.data?.map((blog: any) => ({
+    createdAt: blog.attributes?.createdAt,
+    id: blog.id,
+    img: blog.attributes?.image?.data?.attributes?.url ?? "",
+    title: blog.attributes?.title ?? "",
+  }));
 
   return {
     props: {
       ...localizedData,
-      data,
+      data: { ...homeContent, blogs },
     },
   };
 };

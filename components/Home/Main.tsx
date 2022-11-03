@@ -6,32 +6,10 @@ import PageSectionTitle from "../ui/PageSectionTitle";
 import Ideals, { Ideal } from "../About/Ideals";
 import Blogs from "../Stories/Blogs";
 
-import type { Blog } from "../Stories/Blog";
 import AnimateOnView from "../ui/AnimateOnView";
 import { useTranslation } from "../../hooks";
 import { useContext } from "react";
 import { ContentContext } from "../../pages";
-
-const blogs: Blog[] = [
-  {
-    createdAt: new Date(),
-    id: "1",
-    img: "/images/hero.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    createdAt: new Date(),
-    id: "2",
-    img: "/images/team.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    createdAt: new Date(),
-    id: "3",
-    img: "/images/team_2.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-];
 
 const icons = [
   "/images/vision.svg",
@@ -93,7 +71,7 @@ const Main = () => {
         <AnimateOnView amount={0.3}>
           <Row xs={1} sm={2} md={4} className="text-center mx-auto">
             {content?.addresses?.address?.map((addr: any) => (
-              <Col className="p-3">
+              <Col className="p-3" key={addr.id}>
                 <div className="border h-100 shadow-sm py-5 px-4">
                   <h3>{addr?.country}</h3>
                   <p className="m-0">{addr?.city}</p>
@@ -109,7 +87,12 @@ const Main = () => {
           </Button>
         </div>
 
-        <Blogs blogs={blogs.slice(0, 3)} />
+        <Blogs
+          blogs={content?.blogs?.map((blog: any) => ({
+            ...blog,
+            createdAt: new Date(blog.createdAt),
+          }))}
+        />
       </Container>
     </section>
   );

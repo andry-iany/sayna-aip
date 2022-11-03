@@ -27,7 +27,7 @@ const Header = () => {
     });
 
     return () => typed.destroy();
-  }, []);
+  }, [content?.header?.questions]);
 
   return (
     <header

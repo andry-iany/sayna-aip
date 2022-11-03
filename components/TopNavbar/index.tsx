@@ -32,7 +32,12 @@ const TopNavbar = () => {
     <Navbar bg="white" expand="lg" className="p-0 fixed-top w-100 shadow">
       <Container className="py-4">
         <Link href="/" className={classes.logo + " navbar-brand p-0"}>
-          <Image src="/images/logo.svg" layout="fill" objectFit="contain" />
+          <Image
+            src="/images/logo.svg"
+            layout="fill"
+            objectFit="contain"
+            alt="logo"
+          />
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="align-items-center py-4 py-lg-0">
