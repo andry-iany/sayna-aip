@@ -1,12 +1,28 @@
-import Image from "next/image";
-import { Fragment } from "react";
-import { Col, Container, Row, Card } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import AnimateOnView from "../ui/AnimateOnView";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import AboutTexts from "./AboutTexts";
 import Ideals from "./Ideals";
 import classes from "./style.module.css";
 import Teams from "./Teams";
+
+const ideals = [
+  {
+    title: "notre vision",
+    icon: "/images/vision.svg",
+    body: "Etre le référent en Afrique de la révélation de champions nationaux et régionaux!",
+  },
+  {
+    title: "notre mission",
+    icon: "/images/mission.svg",
+    body: "Accompagner la création et la réussite des PME africaine, l'insertion et la reconversion des jeunes.",
+  },
+  {
+    title: "nos valeurs",
+    icon: "/images/value.svg",
+    body: "Ecoute, Ouverture, Curiosité, Agilité, Engagement, Passion",
+  },
+];
 
 const About = () => {
   return (
@@ -22,7 +38,7 @@ const About = () => {
       </AnimateOnView>
 
       <AnimateOnView amount={0.3}>
-        <Ideals />
+        <Ideals ideals={ideals} />
       </AnimateOnView>
 
       <AboutTexts />

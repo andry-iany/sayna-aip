@@ -3,12 +3,14 @@ import classes from "./style.module.css";
 import Button from "../ui/Button";
 import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
-import Ideals from "../About/Ideals";
+import Ideals, { Ideal } from "../About/Ideals";
 import Blogs from "../Stories/Blogs";
 
 import type { Blog } from "../Stories/Blog";
 import AnimateOnView from "../ui/AnimateOnView";
 import { useTranslation } from "../../hooks";
+import { useContext } from "react";
+import { ContentContext } from "../../pages";
 
 const blogs: Blog[] = [
   {
@@ -31,60 +33,55 @@ const blogs: Blog[] = [
   },
 ];
 
+const icons = [
+  "/images/vision.svg",
+  "/images/mission.svg",
+  "/images/value.svg",
+];
+
 const Main = () => {
   const t = useTranslation();
+  const content: any = useContext(ContentContext);
+
+  console.log(content);
+
+  const ideals = content?.ideal?.map((item: any, idx: number) => {
+    return {
+      title: item?.title as string,
+      body: item?.body as string,
+      icon: icons[idx],
+    } as Ideal;
+  });
 
   return (
     <section className={classes.main + " px-2 px-md-5"}>
       <Container>
         <AnimateOnView>
           <PageSectionTitle
-            title="AFRICA INTEGRATION PARTNER"
-            subtitle=" Africa Integration Partner est un cabinet spécialisé dans
-            l'accompagnement des PME et des entrepreneurs avec des expertises
-            allant de la conception du projet à la recherche de financement en
-            passant par le renforcement des capacités du dirigeant"
+            title={content?.page_section_heading_1?.title}
+            subtitle={content?.page_section_heading_1?.subtitle}
           />
         </AnimateOnView>
 
         <div className={classes.propositions + " d-flex flex-column"}>
-          <AnimateOnView amount={0.6}>
-            <CardAndImage
-              title="Développer le leadership des entrepreneurs, les outiller et les assister"
-              img="/images/home-leadership.svg"
-            >
-              <p className="mb-4">
-                Diagnostic, Stratégie, Refonte et développement, Formation,
-                Suivi et accompagnements
-              </p>
-              <Button img="/images/arrow-right.svg" href="/solutions">
-                {t("cta.our-services")}
-              </Button>
-            </CardAndImage>
-          </AnimateOnView>
-
-          <AnimateOnView>
-            <CardAndImage
-              title="Présent en Côte d'Ivoire et dans la sous-région Ouest africaine"
-              img="/images/home-present.svg"
-              dir="text-right"
-            >
-              <p className="mb-4">
-                Notre force réside dans l'expertise, l'état d'esprit et les
-                valeurs éthiques de nos équipes et notre approche du conseil
-                très opérationnel et pragmatique! En plus de vous conseiller,
-                nous vous accompagnons dans l'exécution et cela fait toute la
-                différence.
-              </p>
-              <Button img="/images/arrow-right.svg" href="/about">
-                {t("cta.about-us")}
-              </Button>
-            </CardAndImage>
-          </AnimateOnView>
+          {content?.card_and_image?.map((card: any, idx: number) => (
+            <AnimateOnView amount={0.6} key={card?.id}>
+              <CardAndImage
+                title={card?.title}
+                img="/images/home-leadership.svg"
+                dir={idx % 2 === 0 ? "text-left" : "text-right"}
+              >
+                <p className="mb-4">{card?.content}</p>
+                <Button img="/images/arrow-right.svg" href="/solutions">
+                  {t("cta.our-services")}
+                </Button>
+              </CardAndImage>
+            </AnimateOnView>
+          ))}
         </div>
 
         <AnimateOnView amount={0.3}>
-          <Ideals />
+          <Ideals ideals={ideals} />
         </AnimateOnView>
 
         <AnimateOnView>
@@ -95,30 +92,14 @@ const Main = () => {
         </AnimateOnView>
         <AnimateOnView amount={0.3}>
           <Row xs={1} sm={2} md={4} className="text-center mx-auto">
-            <Col className="p-3">
-              <div className="border h-100 shadow-sm py-5 px-4">
-                <h3>Togo</h3>
-                <p className="m-0">Nukafu</p>
-              </div>
-            </Col>
-            <Col className="p-3">
-              <div className="border h-100 shadow-sm py-5 px-4">
-                <h3>Côte d'Ivoire</h3>
-                <p className="m-0">Cocody Ambassades</p>
-              </div>
-            </Col>
-            <Col className="p-3">
-              <div className="border h-100 shadow-sm py-5 px-4">
-                <h3>Benin</h3>
-                <p className="m-0">Cité vie nouvelle</p>
-              </div>
-            </Col>
-            <Col className="p-3">
-              <div className="border h-100 shadow-sm py-5 px-4">
-                <h3>Niger</h3>
-                <p className="m-0">Niamey</p>
-              </div>
-            </Col>
+            {content?.addresses?.address?.map((addr: any) => (
+              <Col className="p-3">
+                <div className="border h-100 shadow-sm py-5 px-4">
+                  <h3>{addr?.country}</h3>
+                  <p className="m-0">{addr?.city}</p>
+                </div>
+              </Col>
+            ))}
           </Row>
         </AnimateOnView>
 
