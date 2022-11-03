@@ -27,6 +27,13 @@
   color: #173141;
 }
 
+.pageTitle *:is(h1, h2) {
+  text-transform: lowercase;
+}
+.pageTitle *:is(h1, h2)::first-letter {
+  text-transform: uppercase;
+}
+
 .pageTitle h2 {
   font-family: "Brygada", serif;
   font-style: italic;

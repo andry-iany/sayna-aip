@@ -1,18 +1,13 @@
 import classes from "./style.module.css";
 import Button from "../ui/Button";
-import Mark from "../ui/Mark";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { useTranslation } from "../../hooks";
-
-const questions = [
-  "Vous avez une idée ?",
-  "Vous avez un projet?",
-  "Vous avez déjà vos premiers clients ?",
-];
+import { ContentContext } from "../../pages";
 
 const Header = () => {
   const questionEltRef = useRef<HTMLSpanElement | null>(null);
+  const content: any = useContext(ContentContext);
 
   const t = useTranslation();
 
@@ -21,7 +16,7 @@ const Header = () => {
     if (!headingElt) return;
 
     const typed = new Typed(headingElt, {
-      strings: questions,
+      strings: content?.header?.questions?.map((q: any) => q.content),
       typeSpeed: 40,
       backSpeed: 50,
       loop: true,
@@ -43,10 +38,7 @@ const Header = () => {
           <span ref={questionEltRef}></span>
         </h2>
 
-        <h1 className="mb-5">
-          Faites-vous accompagner par nos <Mark>experts</Mark> et garantissez
-          votre <Mark>réussite</Mark>
-        </h1>
+        <h1 className="mb-5">{content?.header?.title}</h1>
 
         <Button img="/images/arrow-right.svg" href="/solutions">
           {t("cta.our-services")}
