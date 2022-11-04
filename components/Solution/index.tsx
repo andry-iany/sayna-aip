@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Fragment, useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { ContentContext } from "../../pages/solutions";
 import AnimateOnView from "../ui/AnimateOnView";
 import CardAndImage from "../ui/CardAndImage";
 import PageSectionTitle from "../ui/PageSectionTitle";
@@ -76,28 +78,35 @@ const sectors = [
 ];
 
 const Solution = () => {
-  const renderSolutions = solutions.map((solution, idx) => (
+  const content: any = useContext(ContentContext);
+  const solutions = content?.card_and_image;
+
+  const renderSolutions = solutions.map((solution: any, idx: number) => (
     <AnimateOnView key={solution.title} amount={0.3}>
       <CardAndImage
         img={solution.image}
         title={solution.title}
         dir={idx % 2 === 0 ? "text-left" : "text-right"}
       >
-        <p> {solution.subtitle} </p>
-        <ul>
-          {solution.options.map((val, idx) => (
-            <li key={idx}> {val} </li>
-          ))}
-        </ul>
+        {solution.content?.split(/\n/).map((para: any, idx: any) => (
+          <p key={idx} className="mb-0">
+            {para}
+          </p>
+        ))}
       </CardAndImage>
     </AnimateOnView>
   ));
 
-  const renderSectors = sectors.map((sector) => (
+  const renderSectors = content?.sector?.map((sector: any) => (
     <Col key={sector.title} className="px-5 mb-5">
       <AnimateOnView>
-        <Image src={sector.icon} width="60" height="60" alt={sector.title} />
-        <p className="pt-2 lead">{sector.title}</p>
+        <Image
+          src={sector.image?.data?.attributes?.url}
+          width="60"
+          height="60"
+          alt={sector.description}
+        />
+        <p className="pt-2 lead">{sector.description}</p>
       </AnimateOnView>
     </Col>
   ));
@@ -106,15 +115,19 @@ const Solution = () => {
     <Container className={classes.container}>
       <AnimateOnView>
         <PageSectionTitle
-          title="Nos services"
-          subtitle="Nous intervenons dans:"
+          title={content?.page_section_heading_1?.title}
+          subtitle={content?.page_section_heading_1?.subtitle}
         />
       </AnimateOnView>
       <div className={classes.allSolutions + " d-flex flex-column"}>
         {renderSolutions}
       </div>
       <AnimateOnView>
-        <PageSectionTitle title="Nos secteurs" subtitle="" />
+        <PageSectionTitle
+          // TODO: fix the schema for it in strapi
+          title={content?.page_section_heading_2?.[0]?.title}
+          subtitle={content?.page_section_heading_2?.[0]?.subtitle}
+        />
       </AnimateOnView>
       <Row xs="1" md="2" lg="3" className={classes.sectors + " mb-5"}>
         {renderSectors}

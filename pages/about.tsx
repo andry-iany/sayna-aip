@@ -11,8 +11,6 @@ export const ContentContext = createContext({});
 const About: NextPage = (props: any) => {
   const t = useTranslation();
 
-  console.log(props["data"]);
-
   return (
     <div>
       <Head>
