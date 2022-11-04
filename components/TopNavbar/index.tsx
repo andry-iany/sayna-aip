@@ -6,14 +6,6 @@ import Image from "next/image";
 import { useTranslation } from "../../hooks";
 import { useMemo } from "react";
 
-const links = [
-  { text: "à propos", href: "/about" },
-  { text: "solutions", href: "/solutions" },
-  { text: "nos programmes", href: "/programs" },
-  { text: "stories", href: "/stories" },
-  { text: "contact", href: "/contact" },
-];
-
 const TopNavbar = () => {
   const router = useRouter();
   const t = useTranslation();
@@ -46,7 +38,7 @@ const TopNavbar = () => {
       <Container className="py-4">
         <Link href="/" className={classes.logo + " navbar-brand p-0"}>
           <Image
-            src="/images/logo.svg"
+            src="/images/logo-couleur.png"
             layout="fill"
             objectFit="contain"
             alt="logo"

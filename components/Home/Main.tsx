@@ -17,6 +17,11 @@ const icons = [
   "/images/value.svg",
 ];
 
+const cardAndImageIcons = [
+  "/images/home-leadership.svg",
+  "/images/home-present.svg",
+];
+
 const Main = () => {
   const t = useTranslation();
   const content: any = useContext(ContentContext);
@@ -44,7 +49,7 @@ const Main = () => {
             <AnimateOnView amount={0.6} key={card?.id}>
               <CardAndImage
                 title={card?.title}
-                img="/images/home-leadership.svg"
+                img={cardAndImageIcons[idx % cardAndImageIcons.length]}
                 dir={idx % 2 === 0 ? "text-left" : "text-right"}
               >
                 <p className="mb-4">{card?.content}</p>

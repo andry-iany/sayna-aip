@@ -22,9 +22,9 @@
 }
 
 .logo {
-  /* the image is 26:15 */
-  height: 50px;
-  width: calc(50px * 26 / 15);
+  --height: 50px;
+  height: var(--height);
+  width: calc(var(--height) * 1498 / 643);
   position: relative;
   cursor: pointer;
 }
