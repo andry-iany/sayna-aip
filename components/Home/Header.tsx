@@ -34,7 +34,7 @@ const Header = () => {
       className={classes.header + " min-vh-100 d-flex align-items-center"}
     >
       <section className={classes.pageTitle}>
-        <h2 className="h5 mb-4 fw-normal">
+        <h2 className="mb-4 fw-normal">
           <span ref={questionEltRef}></span>
         </h2>
 
