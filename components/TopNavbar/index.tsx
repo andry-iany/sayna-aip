@@ -1,9 +1,10 @@
 import Link from "../ui/Link";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import classes from "./style.module.css";
-import Logo from "../Logo";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { useTranslation } from "../../hooks";
+import { useMemo } from "react";
 
 const links = [
   { text: "à propos", href: "/about" },
@@ -15,6 +16,18 @@ const links = [
 
 const TopNavbar = () => {
   const router = useRouter();
+  const t = useTranslation();
+
+  const links = useMemo(
+    () => [
+      { text: t("link.about"), href: "/about" },
+      { text: t("link.solutions"), href: "/solutions" },
+      { text: t("link.programs"), href: "/programs" },
+      { text: t("link.stories"), href: "/stories" },
+      { text: t("link.contact"), href: "/contact" },
+    ],
+    [t]
+  );
 
   const renderLinks = links.map((link) => (
     <Link
