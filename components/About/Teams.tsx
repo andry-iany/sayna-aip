@@ -5,24 +5,6 @@ import { ContentContext } from "../../pages/about";
 import AnimateOnView from "../ui/AnimateOnView";
 import classes from "./style.module.css";
 
-const teams = [
-  {
-    name: "Freddy KOUDAHOUA",
-    bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles.",
-    image: "/images/team.jpg",
-  },
-  {
-    name: "Freddy KOUDAHOUA 2",
-    bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles…..",
-    image: "/images/team_2.jpg",
-  },
-  {
-    name: "Freddy KOUDAHOUA 3",
-    bio: "Financier et gestionnaire de projet de formation, Freddy bénéficie d’une longue expérience à l’international en stratégie d’entreprise et développement des affaires dans les domaines des télécoms, des Médias, du textile, des FMCG et du négoce. \n Plus de 12 années d’expérience à son active, Freddy cumule des rôles…..",
-    image: "/images/team_3.jpg",
-  },
-];
-
 const Teams = () => {
   const content: any = useContext(ContentContext);
 
