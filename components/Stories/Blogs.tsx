@@ -8,6 +8,7 @@ import AnimateOnView from "../ui/AnimateOnView";
 
 type BlogsProps = {
   blogs: BlogType[];
+  title: string;
 };
 
 const Blogs = (props: BlogsProps) => {
@@ -24,7 +25,7 @@ const Blogs = (props: BlogsProps) => {
   return (
     <div className={classes.blogsWrapper}>
       <AnimateOnView>
-        <PageSectionTitle title="Nos articles" subtitle="" />
+        <PageSectionTitle title={props.title} subtitle="" />
       </AnimateOnView>
       <Row xs={1} md={2} lg={3}>
         {renderBlogs}

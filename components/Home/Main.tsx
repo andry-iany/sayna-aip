@@ -21,8 +21,6 @@ const Main = () => {
   const t = useTranslation();
   const content: any = useContext(ContentContext);
 
-  console.log(content);
-
   const ideals = content?.ideal?.map((item: any, idx: number) => {
     return {
       title: item?.title as string,
@@ -64,8 +62,8 @@ const Main = () => {
 
         <AnimateOnView>
           <PageSectionTitle
-            title="Nos addresses"
-            subtitle="Présent en Côte d'Ivoire et dans la sous-région Ouest africaine"
+            title={content?.page_section_heading_2?.title}
+            subtitle={content?.page_section_heading_2?.subtitle}
           />
         </AnimateOnView>
         <AnimateOnView amount={0.3}>
@@ -88,6 +86,7 @@ const Main = () => {
         </div>
 
         <Blogs
+          title={content?.page_section_heading_3?.title}
           blogs={content?.blogs?.map((blog: any) => ({
             ...blog,
             createdAt: new Date(blog.createdAt),

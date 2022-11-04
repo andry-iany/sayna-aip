@@ -2,45 +2,21 @@ import { Container } from "react-bootstrap";
 import Blogs from "./Blogs";
 import classes from "./style.module.css";
 
-import type { Blog as BlogType } from "./Blog";
-
-const blogs: BlogType[] = [
-  {
-    createdAt: new Date(),
-    id: "1",
-    img: "/images/hero.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    createdAt: new Date(),
-    id: "2",
-    img: "/images/team.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    createdAt: new Date(),
-    id: "3",
-    img: "/images/team_2.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    createdAt: new Date(),
-    id: "4",
-    img: "/images/hero.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    createdAt: new Date(),
-    id: "5",
-    img: "/images/team.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-];
+import { useContext } from "react";
+import { ContentContext } from "../../pages/stories";
 
 const Stories = () => {
+  const content: any = useContext(ContentContext);
+
   return (
     <Container className={classes.container + " d-flex flex-column pb-5"}>
-      <Blogs blogs={blogs} />
+      <Blogs
+        title={content?.page_section_heading_1?.title}
+        blogs={content?.blogs?.map((blog: any) => ({
+          ...blog,
+          createdAt: new Date(blog.createdAt),
+        }))}
+      />
     </Container>
   );
 };
