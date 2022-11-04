@@ -1,30 +1,15 @@
+import { useContext } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { ContentContext } from "../../pages/programs";
 import AnimateOnView from "../ui/AnimateOnView";
 import PageSectionTitle from "../ui/PageSectionTitle";
 import classes from "./style.module.css";
 
-const programs = [
-  {
-    title: "Démarrez !",
-    body: "Lorem ipsum dolor sit amet Lorem ipsum  sit am consectetur adipisicing elit. Dolores, iste? Lorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    title: "Accélérez !",
-    body: "Lorem ipsum dolor sit amet Lorem ipsum  sit am consectetur adipisicing elit. Dolores, iste? Lorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    title: "Xxx avec GIZ",
-    body: "Lorem ipsum dolor sit amet Lorem ipsum  sit am consectetur adipisicing elit. Dolores, iste? Lorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    title: "XXX avec BM",
-    body: "Lorem ipsum dolor sit amet Lorem ipsum  sit am consectetur adipisicing elit. Dolores, iste? Lorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-];
-
 const Programs = () => {
-  const renderPrograms = programs.map((prg) => (
-    <Col key={prg.title} className="px-3 text-center mb-3">
+  const content: any = useContext(ContentContext);
+
+  const renderPrograms = content?.programme?.map((prg: any) => (
+    <Col key={prg.id} className="px-3 text-center mb-3">
       <AnimateOnView>
         <Card className="py-3 rounded-0 shadow-sm">
           <Card.Body>
@@ -41,7 +26,10 @@ const Programs = () => {
   return (
     <Container className={classes.container}>
       <AnimateOnView>
-        <PageSectionTitle title="Nos programmes" subtitle="" />
+        <PageSectionTitle
+          title={content?.page_section_heading_1?.title}
+          subtitle={content?.page_section_heading_1?.subtitle}
+        />
       </AnimateOnView>
       <Row xs="1" sm="2" md="4" className="mb-5 pb-5">
         {renderPrograms}

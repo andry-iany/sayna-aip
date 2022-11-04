@@ -31,16 +31,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { locale = "fr" } = context;
 
   const localizedData = await serverSideTranslations(locale, ["common"]);
-  const aboutContentRes = await api.get<any>(
+  const solutionContentRes = await api.get<any>(
     `/solution?populate=deep&locale=${locale}`
   );
 
-  const aboutContent = aboutContentRes.data?.data?.attributes;
+  const solutionContent = solutionContentRes.data?.data?.attributes;
 
   return {
     props: {
       ...localizedData,
-      data: aboutContent,
+      data: solutionContent,
     },
   };
 };
