@@ -1,10 +1,14 @@
 import Link from "../ui/Link";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Form } from "react-bootstrap";
 import classes from "./style.module.css";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useTranslation } from "../../hooks";
 import { useMemo } from "react";
+
+const setCookie = (locale: string) => {
+  document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`;
+};
 
 const TopNavbar = () => {
   const router = useRouter();
@@ -33,6 +37,12 @@ const TopNavbar = () => {
     </Link>
   ));
 
+  const handleChangeLanguage = (e: any) => {
+    const locale = e.target.value;
+    setCookie(locale);
+    router.push(router.asPath, undefined, { locale });
+  };
+
   return (
     <Navbar bg="white" expand="lg" className="p-0 fixed-top w-100 shadow">
       <Container className="py-4">
@@ -46,7 +56,18 @@ const TopNavbar = () => {
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="align-items-center py-4 py-lg-0">
-          <Nav className="ms-auto gap-4">{renderLinks}</Nav>
+          <Nav className="ms-auto gap-4 align-items-center">
+            {renderLinks}
+            <Form.Select
+              aria-label="Change language"
+              defaultValue={router.locale}
+              onChange={handleChangeLanguage}
+              className={classes.options}
+            >
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+            </Form.Select>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
