@@ -4,8 +4,6 @@ import Link from "../ui/Link";
 import { useRouter } from "next/router";
 import { useTranslation } from "../../hooks";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export type Blog = {
   createdAt: Date;
   img: string;
@@ -33,7 +31,7 @@ const Blog = (props: BlogProps) => {
     <article className="position-relative p-0">
       <div className={classes.blogImg + " position-relative bg-light"}>
         <Image
-          src={baseUrl + blog.img}
+          src={blog.img}
           alt={blog.title}
           layout="fill"
           objectFit="cover"

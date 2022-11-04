@@ -7,7 +7,7 @@ const nextConfig = {
   swcMinify: true,
   i18n,
   images: {
-    domains: ["127.0.0.1"],
+    domains: ["127.0.0.1", process.env.NEXT_IMAGE_ALLOWED_DOMAINS],
   },
 };
 
